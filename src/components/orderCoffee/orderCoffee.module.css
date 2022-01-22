@@ -1,0 +1,18 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.staff {
+  margin-right: 1rem;
+}
+.menu {
+  margin-left: 1rem;
+}
+.options {
+  display: flex;
+}
+.ice {
+  width: 2rem;
+}
