@@ -1,3 +1,5 @@
+@value makerGreen from "../../common/color.css";
+
 .container {
   display: flex;
   height: 100%;
@@ -14,7 +16,7 @@
   width: 20rem;
   position: relative;
   text-align: center;
-  background: #a4d0ab;
+  background: makerGreen;
   border-radius: 2em;
   margin-bottom: 1.5rem;
   padding: 1rem;
@@ -31,7 +33,7 @@
   width: 0;
   height: 0;
   border: 21px solid transparent;
-  border-top-color: #a4d0ab;
+  border-top-color: makerGreen;
   border-bottom: 0;
   border-left: 0;
   margin-left: -10.5px;
