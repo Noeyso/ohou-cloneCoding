@@ -18,6 +18,7 @@ type MetaData = {
 };
 interface Props {
   order: CoffeeOrder | undefined;
+  goHome(): void;
 }
 /*
 - 에스프레소 : 원두 갈기 → 머신 예열 → 샷 추출  → 커피완성
@@ -27,7 +28,7 @@ interface Props {
 - 카페모카  : 원두 갈기 → 머신 예열 → 샷 추출 →  초코시럽 추가 → 우유 스팀하기 → 우유 추가 → 우유거품 추가→ 커피 완성
 - 마끼아토  : 원두 갈기 → 머신 예열 → 샷 추출 → 우유 스팀하기 → 우유 추가 →  카라멜 시럽 추가 → 커피 완성
  */
-function MakeCoffee({ order }: Props) {
+function MakeCoffee({ order, goHome }: Props) {
   const base: MetaData[] = [
     { img: Grinder, des: "커피콩 가는중..." },
     { img: HeatUp, des: "커피머신 예열중.." },
@@ -117,6 +118,9 @@ function MakeCoffee({ order }: Props) {
             img={Barista}
             text={`주문하신 ${order?.coffee} 나왔습니다~^^`}
           />
+          <button className={styles.home} onClick={goHome}>
+            홈으로
+          </button>
         </div>
       )}
     </section>

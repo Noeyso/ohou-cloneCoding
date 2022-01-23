@@ -11,6 +11,9 @@ function App() {
     setIsOrder(true);
     setOrder(coffee);
   }
+  function goHome() {
+    setIsOrder(false);
+  }
 
   return (
     <div className={styles.container}>
@@ -18,7 +21,7 @@ function App() {
       {!isOrder ? (
         <OrderCoffee receiveOrder={receiveOrder} /> //
       ) : (
-        <MakeCoffee order={order} />
+        <MakeCoffee order={order} goHome={goHome} />
       )}
     </div>
   );

@@ -1,3 +1,5 @@
+@value makerOrange,makerBeige,makerGreen from "../../common/color.css";
+
 .container {
   height: 100%;
   display: flex;
@@ -6,7 +8,7 @@
   align-items: center;
 }
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 .process {
@@ -20,4 +22,13 @@
 .comment {
   margin-top: 1rem;
   font-size: 1.5rem;
+}
+.home {
+  padding: 1rem;
+  background-color: makerOrange;
+  font-family: "kotra";
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  align-self: end;
 }

@@ -12,6 +12,20 @@
 .menu {
   margin-left: 1rem;
 }
+.customerSay {
+  display: flex;
+  flex-direction: column;
+}
+.goHome {
+  align-self: end;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  margin-right: 1rem;
+}
+.home {
+  width: 1.5rem;
+}
 .selectOption {
   display: flex;
   padding: 1rem;
