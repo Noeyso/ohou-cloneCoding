@@ -4,12 +4,14 @@ import Employee from "../../common/images/employee.png";
 
 interface Props {
   text: string;
+  img?: string;
 }
-function SayingStaff({ text }: Props) {
+function SayingStaff({ text, img }: Props) {
+  const staff: string = img || Employee;
   return (
     <div className={styles.container}>
       <div className={styles.saying}>{text}</div>
-      <img className={styles.employee} src={Employee} alt="staff" />
+      <img className={styles.employee} src={staff} alt="staff" />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import CoffeeMenu from "../coffeeMenu/coffeeMenu";
 import SayingStaff from "../sayingStaff/sayingStaff";
 import styles from "./orderCoffee.module.css";
 import iceCoffee from "../../common/images/iceCoffee.png";
+import Minus from "../../common/images/minus.png";
+import Plus from "../../common/images/plus.png";
 
 interface Props {
   receiveOrder(coffee: object): void;
@@ -48,7 +50,7 @@ function OrderCoffee({ receiveOrder }: Props) {
               ? `안녕하세요~ Cafe입니다.\n메뉴보고 주문해주세요^^`
               : order === undefined
               ? `${coffee} 주문받았습니다. \n 옵션을 선택해주세요~`
-              : `${coffee} 샷${shot}개 시럽${sirup}번 ${
+              : `${coffee}  샷 ${shot}개  시럽 ${sirup}번  ${
                   ice ? "Ice로" : "Hot으로"
                 }\n 주문하시겠어요?`
           }
@@ -61,7 +63,7 @@ function OrderCoffee({ receiveOrder }: Props) {
       ) : order === undefined ? (
         <Bubble
           text={
-            <div>
+            <div className={styles.selectOption}>
               <ul className={styles.options}>
                 <li className={styles.option}>
                   <p>아이스</p>
@@ -74,37 +76,25 @@ function OrderCoffee({ receiveOrder }: Props) {
                 </li>
                 <li className={styles.option}>
                   <p>샷</p>
-                  <div>
-                    <button
-                      className={`${styles.ctrl} ${styles.minus}`}
-                      onClick={() => addShot(-1)}
-                    >
-                      -
+                  <div className={styles.buttons}>
+                    <button onClick={() => addShot(-1)}>
+                      <img className={styles.ctrl} src={Minus} alt="minus" />
                     </button>
                     {shot}
-                    <button
-                      className={`${styles.ctrl} ${styles.plus}`}
-                      onClick={() => addShot(1)}
-                    >
-                      +
+                    <button onClick={() => addShot(1)}>
+                      <img className={styles.ctrl} src={Plus} alt="plus" />
                     </button>
                   </div>
                 </li>
                 <li className={styles.option}>
                   <p>시럽</p>
-                  <div>
-                    <button
-                      className={`${styles.ctrl} ${styles.minus}`}
-                      onClick={() => addSirup(-1)}
-                    >
-                      -
+                  <div className={styles.buttons}>
+                    <button onClick={() => addSirup(-1)}>
+                      <img className={styles.ctrl} src={Minus} alt="minus" />
                     </button>
                     {sirup}
-                    <button
-                      className={`${styles.ctrl} ${styles.plus}`}
-                      onClick={() => addSirup(1)}
-                    >
-                      +
+                    <button onClick={() => addSirup(1)}>
+                      <img className={styles.ctrl} src={Plus} alt="plus" />
                     </button>
                   </div>
                 </li>

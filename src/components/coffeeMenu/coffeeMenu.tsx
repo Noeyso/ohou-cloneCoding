@@ -48,7 +48,7 @@ function CoffeeMenu({ selectCoffee }: Props) {
             className={styles.coffee}
             onClick={() => selectCoffee("Macchiato")}
           >
-            Caramel Macchiato
+            Macchiato
           </li>
         </div>
       </ul>

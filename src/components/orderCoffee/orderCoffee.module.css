@@ -12,6 +12,10 @@
 .menu {
   margin-left: 1rem;
 }
+.selectOption {
+  display: flex;
+  padding: 1rem;
+}
 .options {
   display: flex;
 }
@@ -25,16 +29,18 @@
 .ice {
   width: 2rem;
 }
-
+.buttons {
+  display: flex;
+  align-items: center;
+}
 .ctrl {
-  margin: 0 0.5rem;
-  background-color: makerOrange;
+  width: 1.5rem;
 }
 .select {
   align-self: center;
 }
 .select_btn {
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
   border-radius: 0.8rem;
   background-color: makerOrange;
   font-family: "kotra";

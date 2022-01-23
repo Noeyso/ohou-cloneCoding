@@ -6,8 +6,8 @@ import OrderCoffee from "./components/orderCoffee/orderCoffee";
 
 function App() {
   const [isOrder, setIsOrder] = useState(false);
-  const [order, setOrder] = useState({});
-  function receiveOrder(coffee: object) {
+  const [order, setOrder] = useState<CoffeeOrder | undefined>();
+  function receiveOrder(coffee: CoffeeOrder) {
     setIsOrder(true);
     setOrder(coffee);
   }
@@ -18,7 +18,7 @@ function App() {
       {!isOrder ? (
         <OrderCoffee receiveOrder={receiveOrder} /> //
       ) : (
-        <MakeCoffee />
+        <MakeCoffee order={order} />
       )}
     </div>
   );
