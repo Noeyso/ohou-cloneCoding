@@ -4,14 +4,15 @@ import Logo from "../../common/images/logo.png";
 import Play from "../../common/images/play.png";
 import Pause from "../../common/images/pause.png";
 interface Props {
+  goHome(): void;
   playMusic(): void;
   stopMusic(): void;
   isPlay: boolean;
 }
-function Header({ isPlay, playMusic, stopMusic }: Props) {
+function Header({ isPlay, playMusic, stopMusic, goHome }: Props) {
   return (
     <header className={styles.container}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={goHome}>
         <h2>Cafe</h2>
         <img className={styles.img} src={Logo} alt="logo" />
       </div>

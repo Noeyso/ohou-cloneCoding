@@ -13,6 +13,8 @@ import Choco from "../../common/images/chocoSyrup.png";
 import IceCoffee from "../../common/images/iceCoffee.png";
 import SayingStaff from "../sayingStaff/sayingStaff";
 import Button from "../common/button/button";
+import Complete from "../../common/sound/complete.mp3";
+
 type MetaData = {
   img: string;
   des: string;
@@ -42,6 +44,7 @@ function MakeCoffee({ order, goHome }: Props) {
   const [isDone, setIsDone] = useState(false);
   const [comment, setComment] = useState("");
   const [img, setImg] = useState("");
+  const complete = new Audio(Complete);
 
   useEffect(() => {
     switch (order?.coffee) {
@@ -132,12 +135,12 @@ function MakeCoffee({ order, goHome }: Props) {
       }, time);
       time += 2000;
     });
-    process.forEach((item) => {
-      setTimeout(() => {
-        setIsDone(true);
-      }, time);
-      time += 2000;
-    });
+
+    setTimeout(() => {
+      setIsDone(true);
+      complete.play();
+    }, time);
+    time += 2000;
   }
 }
 

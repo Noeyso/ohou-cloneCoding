@@ -19,7 +19,10 @@ function App() {
     setOrder(coffee);
   }
   function goHome() {
+    setIsIn(false);
     setIsOrder(false);
+    audioRef.current!.currentTime = 0;
+    stopMusic();
   }
 
   function enter() {
@@ -39,7 +42,12 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <Header isPlay={isPlay} playMusic={playMusic} stopMusic={stopMusic} />
+      <Header
+        goHome={goHome}
+        isPlay={isPlay}
+        playMusic={playMusic}
+        stopMusic={stopMusic}
+      />
       <audio ref={audioRef} src={Bgm} />
       {!isIn ? (
         <div className={styles.out}>

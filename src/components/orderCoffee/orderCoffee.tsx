@@ -8,6 +8,7 @@ import Minus from "../../common/images/minus.png";
 import Plus from "../../common/images/plus.png";
 import Home from "../../common/images/home.png";
 import Button from "../common/button/button";
+import BtnSound from "../../common/sound/buttonClick.mp3";
 
 interface Props {
   receiveOrder(coffee: object): void;
@@ -19,28 +20,33 @@ function OrderCoffee({ receiveOrder }: Props) {
     "CafeLatte",
     "Cappuccino",
     "CafeMocha",
-    "Machiato",
+    "Macchiato",
   ];
   const [coffee, setCoffee] = useState("");
   const [ice, setIce] = useState(false);
   const [shot, setShot] = useState(1);
   const [syrup, setSyrup] = useState(0);
   const [order, setOrder] = useState<CoffeeOrder>();
+  const btnSound = new Audio(BtnSound);
+
   function selectCoffee(coffee: string) {
     setCoffee(coffee);
   }
   function isIce() {
     setIce(!ice);
+    btnSound.play();
   }
   function addShot(num: number) {
     if (!(shot === 1 && num === -1)) {
       setShot(shot + num);
     }
+    btnSound.play();
   }
   function addSirup(num: number) {
     if (!(syrup === 0 && num === -1)) {
       setSyrup(syrup + num);
     }
+    btnSound.play();
   }
   function selectOption() {
     setOrder({ coffee, shot, syrup, ice });
