@@ -5,15 +5,15 @@ import MakeCoffee from "./components/makeCoffee/makeCoffee";
 import OrderCoffee from "./components/orderCoffee/orderCoffee";
 import Door from "./common/images/door.png";
 import DoorOpen from "./common/images/doorOpen.png";
+import openDoor from "./common/sound/doorOpen.mp3";
 import Bgm from "./common/sound/bgm.mp3";
-
 function App() {
   const [isPlay, setIsPlay] = useState(false);
   const [isIn, setIsIn] = useState(false);
   const [isOrder, setIsOrder] = useState(false);
   const [order, setOrder] = useState<CoffeeOrder | undefined>();
   const audioRef = useRef<HTMLAudioElement>(null);
-
+  const doorSound = new Audio(openDoor);
   function receiveOrder(coffee: CoffeeOrder) {
     setIsOrder(true);
     setOrder(coffee);
@@ -25,6 +25,7 @@ function App() {
   function enter() {
     setIsIn(true);
     playMusic();
+    doorSound.play();
   }
 
   function playMusic() {

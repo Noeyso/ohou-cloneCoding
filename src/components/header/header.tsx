@@ -3,7 +3,6 @@ import styles from "./header.module.css";
 import Logo from "../../common/images/logo.png";
 import Play from "../../common/images/play.png";
 import Pause from "../../common/images/pause.png";
-import Bgm from "../../common/sound/bgm.mp3";
 interface Props {
   playMusic(): void;
   stopMusic(): void;
