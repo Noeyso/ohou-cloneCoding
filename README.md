@@ -6,4 +6,11 @@ typescript와 React를 사용한 간단한 카페 시뮬레이션 프로그램 �
 
 ## 동작 설명
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/48446896/148557933-2d28e1c3-0a5e-428b-ac9c-2d541a2d5e1b.gif)
+전체적인 동작은 다음과 같습니다.
+![화면 기록 2022-01-26 오전 1 10 09](https://user-images.githubusercontent.com/48446896/151015145-8951b9ad-2018-4bb8-a4f7-ef07603db995.gif)
+
+- 문을 열고 들어가면 bgm이 재생됩니다.
+  - 이 bgm은 상단 헤더에서 재생/정지할 수 있습니다.
+- 원하는 커피를 선택합니다.
+- 아이스/샷/시럽 옵션을 설정합니다.
+- 주문 완료 후 선택된 커피가 제조됩니다.
