@@ -4,53 +4,23 @@ import Coffee from "../../common/images/coffee.png";
 import Milk from "../../common/images/milk.png";
 import Sugar from "../../common/images/sugar.png";
 interface Props {
+  coffees: string[];
   selectCoffee(coffee: string): void;
 }
-function CoffeeMenu({ selectCoffee }: Props) {
+function CoffeeMenu({ selectCoffee, coffees }: Props) {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Menu</h2>
       <ul className={styles.menu}>
-        <div className={styles.page1}>
+        {coffees.map((coffee, idx) => (
           <li
+            key={idx}
             className={styles.coffee}
-            onClick={() => selectCoffee("Espresso")}
+            onClick={() => selectCoffee(coffee)}
           >
-            Espresso
+            {coffee}
           </li>
-          <li
-            className={styles.coffee}
-            onClick={() => selectCoffee("Americano")}
-          >
-            Americano
-          </li>
-          <li
-            className={styles.coffee}
-            onClick={() => selectCoffee("CafeLatte")}
-          >
-            CafeLatte
-          </li>
-        </div>
-        <div className={styles.page2}>
-          <li
-            className={styles.coffee}
-            onClick={() => selectCoffee("CafeMocha")}
-          >
-            CafeMocha
-          </li>
-          <li
-            className={styles.coffee}
-            onClick={() => selectCoffee("Cappuccino")}
-          >
-            Cappuccino
-          </li>
-          <li
-            className={styles.coffee}
-            onClick={() => selectCoffee("Macchiato")}
-          >
-            Macchiato
-          </li>
-        </div>
+        ))}
       </ul>
     </section>
   );

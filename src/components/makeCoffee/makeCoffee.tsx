@@ -10,8 +10,9 @@ import AddMilk from "../../common/images/addMilk.png";
 import AddWater from "../../common/images/pourWater.png";
 import Caramel from "../../common/images/caramelSyrup.png";
 import Choco from "../../common/images/chocoSyrup.png";
-import Bubble from "../bubble/bubble";
+import IceCoffee from "../../common/images/iceCoffee.png";
 import SayingStaff from "../sayingStaff/sayingStaff";
+import Button from "../common/button/button";
 type MetaData = {
   img: string;
   des: string;
@@ -83,23 +84,7 @@ function MakeCoffee({ order, goHome }: Props) {
         throw new Error("wrong coffee type");
     }
   }, []);
-  function makeCoffee(process: MetaData[]) {
-    console.log(process);
-    let time = 0;
-    process.forEach((item) => {
-      setTimeout(() => {
-        setImg(item.img);
-        setComment(item.des);
-      }, time);
-      time += 2000;
-    });
-    process.forEach((item) => {
-      setTimeout(() => {
-        setIsDone(true);
-      }, time);
-      time += 2000;
-    });
-  }
+
   return (
     <section className={styles.container}>
       {!isDone && (
@@ -118,13 +103,42 @@ function MakeCoffee({ order, goHome }: Props) {
             img={Barista}
             text={`주문하신 ${order?.coffee} 나왔습니다~^^`}
           />
-          <button className={styles.home} onClick={goHome}>
-            홈으로
-          </button>
+          <Button text={"홈으로"} onClick={goHome} />
         </div>
       )}
     </section>
   );
+
+  function makeCoffee(process: MetaData[]) {
+    let time = 0;
+    if (order?.ice) {
+      setTimeout(() => {
+        setImg(IceCoffee);
+        setComment("컵에 얼음을 담습니다.");
+      }, time);
+      time += 2000;
+    }
+    if (order?.ice) {
+      setTimeout(() => {
+        setImg(Caramel);
+        setComment(`컵에 시럽을 ${order?.syrup}번 추가합니다.`);
+      }, time);
+      time += 2000;
+    }
+    process.forEach((item) => {
+      setTimeout(() => {
+        setImg(item.img);
+        setComment(item.des);
+      }, time);
+      time += 2000;
+    });
+    process.forEach((item) => {
+      setTimeout(() => {
+        setIsDone(true);
+      }, time);
+      time += 2000;
+    });
+  }
 }
 
 export default MakeCoffee;

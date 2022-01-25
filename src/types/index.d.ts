@@ -3,10 +3,11 @@ declare module "*.jpeg";
 declare module "*.png";
 declare module "*.module.css";
 declare module "*.otf";
+declare module "*.mp3";
 
 declare type CoffeeOrder = {
   coffee: string;
   shot: number;
-  sirup: number;
+  syrup: number;
   ice: boolean;
 };

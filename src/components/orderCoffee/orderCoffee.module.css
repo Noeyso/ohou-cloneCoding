@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
 }
-.staff {
+.staffSay {
   margin-right: 1rem;
 }
 .menu {
@@ -52,27 +52,4 @@
 }
 .select {
   align-self: center;
-}
-.select_btn {
-  padding: 1rem 1rem;
-  border-radius: 0.8rem;
-  background-color: makerOrange;
-  font-family: "kotra";
-}
-.select_btn:hover {
-  background-color: makerBeige;
-}
-
-.order_btn {
-  padding: 1rem;
-  font-family: "kotra";
-  border-radius: 0.5rem;
-  margin: 0 0.5rem;
-  font-size: 1rem;
-}
-.yes {
-  background-color: makerGreen;
-}
-.retry {
-  background-color: makerOrange;
 }

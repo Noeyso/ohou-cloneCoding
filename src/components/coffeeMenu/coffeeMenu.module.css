@@ -12,17 +12,17 @@
 
 .menu {
   display: flex;
-}
-.page1 {
-  margin-left: 1rem;
-}
-.page2 {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
   align-items: center;
-  margin-left: 2rem;
 }
+
 .coffee {
+  width: 50%;
   font-size: 1.2rem;
   margin-top: 1rem;
+}
+.coffee:hover {
+  color: white;
 }
