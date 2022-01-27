@@ -1,8 +1,11 @@
+@value mainColor: #35c5f0;
+
 @value makerBlack: black;
 @value makerWhite: white;
 @value makerDarkGrey: #151618;
-@value makerGrey: #626262;
-@value makerLightGrey: #e8e7e6;
+@value makerGrey: #757575;
+@value makerLightGrey2:#B5B5B5;
+@value makerLightGrey1: #D6D6D6;
 @value makerRed: #FC5C4F;
 @value makerBeige:#f4efe6;
 @value makerGreen:#a4d0ab;

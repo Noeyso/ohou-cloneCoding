@@ -1,13 +1,9 @@
 @value makerBeige from "./common/color.css";
-@font-face {
-  font-family: "kotra";
-  src: url("./common/fonts/kotra.otf");
-}
 
 body {
   margin: 0;
-  background-color: #f4efe6;
-  font-family: "kotra";
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
+    "Malgun Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   white-space: pre-wrap;

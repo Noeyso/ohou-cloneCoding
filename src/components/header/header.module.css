@@ -1,39 +1,101 @@
-@value makerDarkGreen from "../../common/color.css";
-
+@value mainColor,makerGrey,makerLightGrey1 from "../../common/color.css";
 .container {
-  width: 100%;
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: makerDarkGreen;
+  flex-direction: column;
 }
+.header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
 .logo {
+  width: 5rem;
+}
+.nav__menu {
+  display: flex;
+}
+.menu {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  color: white;
 }
-.img {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-left: 0.5rem;
+.menu_item {
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
-.music {
+.menu_item:hover {
+  color: mainColor;
+}
+.nav__end {
+  display: flex;
+  align-items: center;
+}
+.form {
+  position: relative;
+}
+
+.input {
+  padding: 0.7rem 3rem 0.7rem 2.3rem;
+  border: 1px solid makerLightGrey1;
+  border-radius: 0.2rem;
+}
+.search {
+  width: 1rem;
   position: absolute;
-  right: 0;
+  top: 0.7rem;
+  left: 0.7rem;
 }
-.musicButton {
+
+.cart_button {
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+.cart {
+  color: makerGrey;
+  display: flex;
+  font-size: 1.2rem;
+}
+.cart_button:hover .cart {
+  color: white;
+}
+.cart_button:hover {
+  background-color: mainColor;
+}
+
+.personal {
+  display: flex;
+}
+.personal_item {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: makerGrey;
+}
+.personal_item:hover {
+  color: mainColor;
+}
+.personal_item:last-child::after {
+  content: "";
+}
+.personal_item::after {
+  content: "|";
+  display: block;
+  float: right;
+  margin: 0 0.5rem;
+  color: makerGrey;
+}
+.write {
   display: flex;
   align-items: center;
-}
-.play,
-.pause {
-  width: 1.3rem;
-}
-.text {
-  margin: 1rem;
+  padding: 0.7rem 1rem;
   color: white;
+  background-color: mainColor;
+  border-radius: 0.2rem;
+  font-weight: 900;
   font-size: 1rem;
-  font-family: "kotra";
+}
+.arrowDown {
+  margin-left: 0.5rem;
 }
