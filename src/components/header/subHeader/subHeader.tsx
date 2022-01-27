@@ -10,13 +10,15 @@ function SubHeader({ menu }: Props) {
     <div className={styles.container}>
       <ul className={styles.menu}>
         {menu.map((menuItem, idx) => (
-          <li key={idx}>{menuItem}</li>
+          <li className={styles.menu_item} key={idx}>
+            {menuItem}
+          </li>
         ))}
       </ul>
-      <button>
+      <button className={styles.interior_btn}>
         <img className={styles.icon} src={Icon} alt="icon" />
-        3D인테리어
-        <span>BETA</span>
+        <span className={styles.text}>3D인테리어</span>
+        <span className={styles.tag}>BETA</span>
       </button>
     </div>
   );
