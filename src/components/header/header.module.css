@@ -1,4 +1,4 @@
-@value mainColor,makerGrey,makerLightGrey1 from "../../common/color.css";
+@value mainColor,makerGrey,makerLightGrey,makerLightGrey1 from "../../common/color.css";
 .container {
   display: flex;
   flex-direction: column;
@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  border-bottom: 1px solid makerLightGrey;
 }
 
 .logo {
@@ -21,6 +22,7 @@
   align-items: center;
 }
 .menu_item {
+  position: relative;
   margin: 0 1rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -28,6 +30,35 @@
 .menu_item:hover {
   color: mainColor;
 }
+
+.menu_item:after {
+  margin: 2px 0 0 -4px;
+  border-width: 0 4.5px 9px;
+  border-color: transparent transparent #fff;
+  transform: translateX(-0.5px);
+}
+.menu_item:before {
+  margin: 1px 0 0 -5px;
+  border-width: 0 5px 10px;
+  border-color: transparent transparent #dbdbdb;
+}
+.menu_item:after,
+.menu_item:before {
+  content: "";
+  display: none;
+  position: absolute;
+  padding-top: 1.3rem;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.menu_item:hover:before,
+.menu_item:hover:after {
+  display: block;
+}
+
 .nav__end {
   display: flex;
   align-items: center;

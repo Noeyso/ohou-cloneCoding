@@ -1,0 +1,117 @@
+@value makerLightGrey,mainColor from "../../../common/color.css";
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.top_story {
+  width: 75%;
+}
+.top_story_img {
+  width: 55rem;
+  height: 40rem;
+}
+/*배너*/
+.top_banner {
+  height: 40rem;
+  width: 25%;
+  background: makerLightGrey;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  width: calc(100% * 4);
+  display: flex;
+  transition: 2s;
+}
+
+.top_banner input {
+  display: none;
+}
+
+.slide {
+  width: calc(100% / 4);
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide img {
+  width: 8rem;
+}
+
+.slides li:nth-child(1) {
+  background: #ffa;
+}
+.slides li:nth-child(2) {
+  background: #faa;
+}
+.slides li:nth-child(3) {
+  background: #afa;
+}
+.slides li:nth-child(4) {
+  background: #aaf;
+}
+
+/* 배너 - 수동 조작 */
+.navigation_manual {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+.manual_btn {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.manual_btn:not(:last-child) {
+  margin-right: 0.2rem;
+}
+
+.banner input[type="radio"]:nth-child(1):checked ~ .slides {
+  margin-left: 0;
+}
+.banner input[type="radio"]:nth-child(2):checked ~ .slides {
+  margin-left: -100%;
+}
+.banner input[type="radio"]:nth-child(3):checked ~ .slides {
+  margin-left: -200%;
+}
+.banner input[type="radio"]:nth-child(4):checked ~ .slides {
+  margin-left: -300%;
+}
+/* 배너 - 자동 조작 */
+.navigation_auto {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: auto;
+}
+
+.navigation_auto div {
+  background-color: white;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.navigation_auto div:not(:last-child) {
+  margin-right: 0.2rem;
+}
+
+.banner input[type="radio"]:nth-child(1):checked ~ .navigation_auto .auto_btn1,
+.banner input[type="radio"]:nth-child(2):checked ~ .navigation_auto .auto_btn2,
+.banner input[type="radio"]:nth-child(3):checked ~ .navigation_auto .auto_btn3,
+.banner input[type="radio"]:nth-child(4):checked ~ .navigation_auto .auto_btn4 {
+  background-color: mainColor;
+}

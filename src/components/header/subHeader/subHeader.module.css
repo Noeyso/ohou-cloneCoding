@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid makerLightGrey;
+
   border-bottom: 1px solid makerLightGrey;
   padding: 1rem;
 }
@@ -15,22 +15,37 @@
   color: makerDarkGrey;
   margin-right: 1rem;
   font-weight: 700;
+  position: relative;
 }
 .menu_item:hover {
   color: mainColor;
+}
+.menu_item_clicked:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.2rem;
+  margin: 4px -4px 0;
+  height: 2px;
+  background-color: mainColor;
+}
+
+.interior_btn {
+  display: flex;
+  align-items: center;
 }
 
 .icon {
   width: 1.5rem;
 }
 .text {
-  margin: 0 0.3rem;
+  margin: 0 0.2rem;
+  padding-top: 0.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: makerGrey;
-}
-.interior_btn {
-  display: flex;
-  align-items: center;
 }
 .tag {
   font-size: 0.5rem;
