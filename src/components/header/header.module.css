@@ -5,10 +5,15 @@
 }
 .header_top {
   display: flex;
+  justify-content: center;
+  border-bottom: 1px solid makerLightGrey;
+}
+.top_container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid makerLightGrey;
+  width: 1175px;
 }
 
 .logo {
