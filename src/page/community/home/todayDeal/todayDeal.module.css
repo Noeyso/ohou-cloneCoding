@@ -1,7 +1,115 @@
+@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
+
 .container {
   display: flex;
   justify-content: center;
 }
 .deal {
   width: 1175px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.header h2 {
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+.header span {
+  color: mainColor;
+}
+
+/*캐러셀*/
+.carousel {
+  align-self: center;
+  position: relative;
+  width: calc(18.25rem * 4);
+  overflow: hidden;
+}
+.menu {
+  display: flex;
+  width: calc(18.25rem * 10);
+}
+.item {
+  padding: 0 0.625rem;
+}
+.img_box {
+}
+.img_box img {
+  width: 17rem;
+  height: 17rem;
+  border-radius: 0.3rem;
+}
+.company {
+  font-size: 0.7rem;
+  color: makerGrey;
+}
+.title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.1rem;
+  max-height: 2rem;
+  margin-top: 0.3rem;
+}
+.item_price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+.sale {
+  color: makerPink;
+}
+.item_status {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.rate {
+  margin: 0 0.2rem 0 0.1rem;
+  color: makerDarkGrey;
+}
+.review {
+  color: makerGrey;
+}
+
+.freeShip {
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  font-size: 0.2rem;
+  font-weight: 700;
+  color: makerGrey;
+  background-color: makerLightGrey1;
+}
+
+.list_prev,
+.list_next {
+  position: absolute;
+  width: 4rem;
+  height: 100%;
+  display: flex;
+  top: 0;
+}
+
+.list_prev {
+  left: 0;
+  background: linear-gradient(270deg, hsla(0, 0%, 100%, 0.01), #fff);
+}
+.list_next {
+  justify-content: end;
+  right: 0;
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.01), #fff);
+}
+
+.move_btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background-color: #000;
+  opacity: 26%;
+  border-radius: 10rem;
+  margin-top: 3rem;
 }
