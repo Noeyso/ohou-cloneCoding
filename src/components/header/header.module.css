@@ -6,7 +6,7 @@
 .header_top {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid makerLightGrey;
+  border-bottom: 1px solid makerLightGrey1;
 }
 .top_container {
   display: flex;
@@ -74,7 +74,7 @@
 
 .input {
   padding: 0.7rem 3rem 0.7rem 2.3rem;
-  border: 1px solid makerLightGrey1;
+  border: 1px solid makerLightGrey2;
   border-radius: 0.2rem;
 }
 .search {

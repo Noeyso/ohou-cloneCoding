@@ -16,7 +16,6 @@ function HomeHeader() {
     inputRef1.current!.checked = true;
     let idx = 0;
     setInterval(function () {
-      console.log(idx);
       refArr[idx].current!.checked = true;
       idx++;
       if (idx > refArr.length - 1) {

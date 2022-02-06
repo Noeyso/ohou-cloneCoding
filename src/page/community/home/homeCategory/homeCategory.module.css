@@ -1,0 +1,70 @@
+@value makerDarkGrey from "../../../../common/color.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.category {
+  width: 1175px;
+  display: flex;
+  flex-direction: column;
+}
+.category > h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-left: 0.5rem;
+}
+.carousel {
+  align-self: center;
+  position: relative;
+  width: calc(7rem * 10);
+  overflow: hidden;
+}
+.list {
+  display: flex;
+  width: calc(7rem * 16);
+  transition: 1s;
+}
+
+.list > li {
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: makerDarkGrey;
+}
+.list > li > img {
+  width: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.list_prev,
+.list_next {
+  position: absolute;
+  width: 4rem;
+  height: 100%;
+  display: flex;
+  top: 0;
+}
+
+.list_prev {
+  left: 0;
+  background: linear-gradient(270deg, hsla(0, 0%, 100%, 0.01), #fff);
+}
+.list_next {
+  justify-content: end;
+  right: 0;
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0.01), #fff);
+}
+
+.move_btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background-color: #000;
+  opacity: 26%;
+  border-radius: 10rem;
+  margin-top: 3rem;
+}

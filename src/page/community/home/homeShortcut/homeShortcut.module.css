@@ -1,0 +1,28 @@
+@value makerLightGrey from "../../../../common/color.css";
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.menu {
+  width: 1175px;
+  display: flex;
+  justify-content: center;
+}
+.item {
+  text-align: center;
+  font-weight: 700;
+}
+.item:not(:last-child) {
+  margin-right: 3.5rem;
+}
+.item_img {
+  padding: 0.7rem;
+  background-color: makerLightGrey;
+  border-radius: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.item img {
+  width: 4rem;
+}
