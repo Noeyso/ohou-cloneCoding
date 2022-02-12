@@ -5,16 +5,20 @@ import HomeCategory from "./homeCategory/homeCategory";
 import HomeHeader from "./homeHeader/homeHeader";
 import HomeShortcut from "./homeShortcut/homeShortcut";
 import HomeStory from "./homeStory/homeStory";
+import PopularPhotos from "./popularPhotos/popularPhotos";
 import TodayDeal from "./todayDeal/todayDeal";
 
 function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <HomeHeader />
-      <HomeShortcut />
-      <HomeStory />
-      <HomeCategory />
-      <TodayDeal />
+      <div className={styles.content}>
+        <HomeShortcut />
+        <HomeStory />
+        <HomeCategory />
+        <TodayDeal />
+        <PopularPhotos />
+      </div>
     </div>
   );
 }

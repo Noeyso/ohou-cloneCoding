@@ -1,0 +1,71 @@
+@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.photos {
+  width: 1175px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.header h2 {
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+.header span {
+  color: mainColor;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  width: 25%;
+}
+.image_container {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+}
+.image {
+  max-width: 100%;
+
+  transition: all 0.3s linear;
+}
+.image:hover {
+  transform: scale(1.1);
+}
+.detail {
+  width: 100%;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+}
+.user_info {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+.user {
+  width: 1.2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.user_info > span {
+  margin-left: 0.1rem;
+}
