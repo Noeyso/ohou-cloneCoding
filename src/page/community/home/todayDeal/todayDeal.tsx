@@ -45,46 +45,44 @@ function TodayDeal() {
   }
   return (
     <section className={styles.container}>
-      <div className={styles.deal}>
-        <div className={styles.header}>
-          <h2>오늘의딜</h2>
-          <span>더보기</span>
+      <div className={styles.header}>
+        <h2>오늘의딜</h2>
+        <span>더보기</span>
+      </div>
+      <div className={styles.carousel}>
+        <div className={styles.list_prev}>
+          <button className={`${styles.move_btn} ${styles.left}`}>
+            <IoIosArrowBack color="#fff" size="1rem" onClick={movePrev} />
+          </button>
         </div>
-        <div className={styles.carousel}>
-          <div className={styles.list_prev}>
-            <button className={`${styles.move_btn} ${styles.left}`}>
-              <IoIosArrowBack color="#fff" size="1rem" onClick={movePrev} />
-            </button>
-          </div>
-          <ul className={styles.menu} style={style}>
-            {listItems.map((item, idx) => (
-              <li key={idx} className={styles.item}>
-                <div className={styles.img_box}>
-                  <img src={item.img} alt="item" />
-                </div>
-                <span className={styles.company}>{item.company}</span>
-                <span className={styles.title}>{item.title}</span>
-                <div className={styles.item_price}>
-                  <span className={styles.sale}>{item.sale}%</span>
-                  <span className={styles.price}>{item.price}</span>
-                </div>
-                <div className={styles.item_status}>
-                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-                  <span className={styles.rate}>{item.rate}</span>
-                  <span className={styles.review}>리뷰 {item.review}</span>
-                </div>
-                {item.isFreeShip && (
-                  <span className={styles.freeShip}>무료배송</span>
-                )}
-              </li>
-            ))}
-          </ul>
+        <ul className={styles.menu} style={style}>
+          {listItems.map((item, idx) => (
+            <li key={idx} className={styles.item}>
+              <div className={styles.img_box}>
+                <img src={item.img} alt="item" />
+              </div>
+              <span className={styles.company}>{item.company}</span>
+              <span className={styles.title}>{item.title}</span>
+              <div className={styles.item_price}>
+                <span className={styles.sale}>{item.sale}%</span>
+                <span className={styles.price}>{item.price}</span>
+              </div>
+              <div className={styles.item_status}>
+                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                <span className={styles.rate}>{item.rate}</span>
+                <span className={styles.review}>리뷰 {item.review}</span>
+              </div>
+              {item.isFreeShip && (
+                <span className={styles.freeShip}>무료배송</span>
+              )}
+            </li>
+          ))}
+        </ul>
 
-          <div className={styles.list_next}>
-            <button className={`${styles.move_btn} ${styles.right}`}>
-              <IoIosArrowForward color="#fff" size="1rem" onClick={moveNext} />
-            </button>
-          </div>
+        <div className={styles.list_next}>
+          <button className={`${styles.move_btn} ${styles.right}`}>
+            <IoIosArrowForward color="#fff" size="1rem" onClick={moveNext} />
+          </button>
         </div>
       </div>
     </section>

@@ -1,14 +1,5 @@
 @value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
 
-.container {
-  display: flex;
-  justify-content: center;
-}
-.deal {
-  width: 1175px;
-  display: flex;
-  flex-direction: column;
-}
 .header {
   display: flex;
   justify-content: space-between;
@@ -25,7 +16,6 @@
 
 /*캐러셀*/
 .carousel {
-  align-self: center;
   position: relative;
   width: calc(18.25rem * 4);
   overflow: hidden;

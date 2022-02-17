@@ -1,0 +1,82 @@
+@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.header h2 {
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+.header span {
+  color: mainColor;
+}
+/*캐러셀*/
+.carousel {
+  align-self: center;
+  position: relative;
+  width: calc(11.3rem * 6);
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  width: calc(11.3rem * 9);
+}
+.item {
+  margin-right: 0.625rem;
+}
+.img_container {
+  width: 10.75rem;
+}
+.img_container img {
+  width: 100%;
+}
+.title {
+  font-size: 0.85rem;
+}
+.price_info {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.sale {
+  font-weight: 700;
+  color: mainColor;
+  margin-right: 0.5rem;
+}
+.price {
+  font-weight: 700;
+}
+.list_prev,
+.list_next {
+  position: absolute;
+
+  height: 100%;
+  display: flex;
+  top: 0;
+}
+
+.list_prev {
+  left: 0;
+}
+.list_next {
+  justify-content: end;
+  right: 0;
+}
+
+.move_btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  background-color: #000;
+  opacity: 26%;
+  border-radius: 10rem;
+  margin-top: 3rem;
+}

@@ -1,0 +1,99 @@
+@value makerLightGrey,makerDarkGrey,makerGrey from "../../common/color.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+}
+.footer {
+  width: 1175px;
+  margin: 2rem 0;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.customer_center {
+  display: flex;
+  flex-direction: column;
+}
+.customer_center > a {
+  color: makerDarkGrey;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.call {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.hours {
+  font-size: 0.85rem;
+}
+
+.icons {
+  display: flex;
+}
+.icons li {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.shortcut_list {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: makerDarkGrey;
+  margin-top: 2rem;
+}
+.shortcut_list > li {
+  margin-right: 0.4rem;
+}
+.info_wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: makerGrey;
+  margin-top: 0.4rem;
+}
+.info:nth-child(1) {
+  margin-top: 1rem;
+}
+
+dl a,
+dl span {
+  display: flex;
+  margin-right: 0.3rem;
+  color: makerGrey;
+}
+
+dl span dd {
+  display: flex;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  color: makerDarkGrey;
+}
+.certification {
+  display: flex;
+  align-items: center;
+}
+.certification img {
+  width: 2rem;
+}
+.certification div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+  line-height: 0.9rem;
+  color: makerGrey;
+}

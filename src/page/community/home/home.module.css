@@ -1,0 +1,42 @@
+@value makerLightGrey,makerDarkGrey,makerGrey from "../../../common/color.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.content {
+  width: 1175px;
+  display: flex;
+  flex-direction: column;
+}
+.banner {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.about_member {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  padding: 1.5rem 0;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  background-color: makerLightGrey;
+}
+
+.member > span:nth-child(1) {
+  color: makerDarkGrey;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+.member > span:nth-child(2) {
+  color: makerGrey;
+  font-size: 0.8rem;
+}

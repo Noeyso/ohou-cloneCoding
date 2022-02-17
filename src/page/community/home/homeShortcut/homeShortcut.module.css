@@ -1,11 +1,8 @@
 @value makerLightGrey from "../../../../common/color.css";
 .container {
-  display: flex;
-  justify-content: center;
   margin-top: 2rem;
 }
 .menu {
-  width: 1175px;
   display: flex;
   justify-content: center;
 }

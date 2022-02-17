@@ -1,13 +1,9 @@
 @value makerGrey,makerDarkGrey,makerLightGrey from "../../../../common/color.css";
 
 .container {
-  display: flex;
-  justify-content: center;
   margin-top: 2rem;
 }
-.story {
-  width: 1175px;
-}
+
 header h2 {
   font-size: 1.3rem;
   font-weight: 700;

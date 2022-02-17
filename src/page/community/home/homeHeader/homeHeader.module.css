@@ -2,16 +2,12 @@
 
 .container {
   display: flex;
-  justify-content: center;
-}
-.top {
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 1rem;
   padding: 1rem;
-  width: 1175px;
 }
+
 .top_story {
   width: 70%;
   position: relative;

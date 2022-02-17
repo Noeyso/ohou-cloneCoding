@@ -1,0 +1,67 @@
+@value makerGrey,makerPink,makerDarkGrey,makerLightGrey,mainColor from "../../../../common/color.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.header h2 {
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+
+.menu {
+  width: 1175px;
+  display: flex;
+  color: makerGrey;
+  font-weight: 700;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.menu li {
+  margin: 0 1rem;
+  padding: 0.5rem 0.3rem;
+}
+.menu li:hover {
+  color: mainColor;
+}
+.clicked {
+  color: mainColor;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list > li {
+  width: 25%;
+}
+
+.img_container {
+  margin: 1rem;
+}
+.img_container img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.more_container {
+  position: relative;
+}
+.more {
+  height: 16.359rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: makerLightGrey;
+  font-weight: 700;
+  font-size: 1.3rem;
+}

@@ -30,3 +30,18 @@ ul {
 li {
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
+dl {
+  margin: 0;
+}
+dt,
+dd {
+  margin: 0;
+  font-style: normal;
+}
+span {
+  font-style: normal;
+}
