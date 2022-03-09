@@ -35,7 +35,7 @@ function HomeCategory() {
     console.log("move prev");
     if (temp >= 560) {
       setTemp(temp - 560);
-      setRemain(temp + 560);
+      setRemain(remain + 560);
       setStyle({ marginLeft: `${-(temp - 560)}px` });
     } else {
       setTemp(0);
@@ -48,7 +48,9 @@ function HomeCategory() {
       <h2>카테고리별 상품 찾기</h2>
       <div className={styles.carousel}>
         <div className={styles.list_prev}>
-          <button className={`${styles.move_btn} ${styles.left}`}>
+          <button
+            className={temp === 0 ? "" : `${styles.move_btn} ${styles.left}`}
+          >
             <IoIosArrowBack color="#fff" size="1rem" onClick={movePrev} />
           </button>
         </div>
@@ -62,7 +64,9 @@ function HomeCategory() {
           ))}
         </ul>
         <div className={styles.list_next}>
-          <button className={`${styles.move_btn} ${styles.right}`}>
+          <button
+            className={remain === 0 ? "" : `${styles.move_btn} ${styles.right}`}
+          >
             <IoIosArrowForward color="#fff" size="1rem" onClick={moveNext} />
           </button>
         </div>

@@ -1,6 +1,12 @@
 @value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
 
+.container {
+  position: relative;
+  margin: 2rem 0;
+}
+
 .header {
+  max-width: 1175px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,13 +22,13 @@
 /*캐러셀*/
 .carousel {
   align-self: center;
-  position: relative;
   width: calc(24.5rem * 3);
   overflow: hidden;
 }
 .list {
   display: flex;
   width: calc(24.5rem * 10);
+  transition: 0.5s;
 }
 .item {
   display: flex;
@@ -42,29 +48,38 @@
   font-weight: 700;
   margin-top: 0.5rem;
 }
+
 .list_prev,
 .list_next {
   position: absolute;
-  width: 4rem;
-  height: 100%;
   display: flex;
-  top: 0;
+  top: 45%;
+  z-index: 1;
 }
 
 .list_prev {
   left: 0;
 }
 .list_next {
-  justify-content: end;
   right: 0;
 }
 
 .move_btn {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0.5rem;
-  background-color: #000;
-  opacity: 26%;
-  border-radius: 10rem;
-  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  background-color: white;
+  border-radius: 50%;
+}
+.move_btn:hover {
+  color: white;
+  background-color: mainColor;
+}
+.icon_hide {
+  display: none;
 }

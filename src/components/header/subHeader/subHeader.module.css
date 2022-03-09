@@ -4,34 +4,43 @@
   display: flex;
   justify-content: center;
   border-bottom: 1px solid makerLightGrey;
+  background-color: white;
 }
 .menu_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 60px;
   width: 1175px;
+  max-width: 1175px;
 }
 .menu {
   display: flex;
 }
 .menu_item {
-  color: makerDarkGrey;
-  margin-right: 1rem;
-  font-weight: 700;
   position: relative;
+  color: makerDarkGrey;
+  font-weight: 700;
+  line-height: 23px;
+  margin: 8px 4px;
+  padding: 6px 8px 4px;
 }
 .menu_item:hover {
   color: mainColor;
 }
-.menu_item_clicked:after {
+
+.menu_item_clicked {
+  color: black;
+  font-weight: 800;
+}
+.menu_item_clicked::after {
   content: "";
-  display: block;
   position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  bottom: -1.2rem;
-  margin: 4px -4px 0;
+  display: block;
+  margin: 6px -4px 0;
   height: 2px;
   background-color: mainColor;
 }

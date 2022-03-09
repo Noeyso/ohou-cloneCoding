@@ -1,7 +1,7 @@
 @value makerGrey,makerDarkGrey,makerLightGrey from "../../../../common/color.css";
 
 .container {
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 header h2 {

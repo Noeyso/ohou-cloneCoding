@@ -52,6 +52,7 @@
 .more {
   height: 16.359rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -64,4 +65,17 @@
   background-color: makerLightGrey;
   font-weight: 700;
   font-size: 1.3rem;
+}
+.arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  background-color: white;
+  border-radius: 50%;
+  margin-top: 1rem;
 }

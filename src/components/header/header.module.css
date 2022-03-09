@@ -1,69 +1,80 @@
-@value mainColor,makerGrey,makerLightGrey,makerLightGrey1 from "../../common/color.css";
+@value mainColor,makerGrey,makerLightGrey,makerLightGrey1,makerLightGrey2,makerLightGrey3 from "../../common/color.css";
 .container {
-  display: flex;
-  flex-direction: column;
 }
 .header_top {
   display: flex;
   justify-content: center;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid makerLightGrey1;
+  background-color: white;
 }
 .top_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 10px 60px;
   width: 1175px;
+  max-width: 1175px;
 }
 
 .logo {
-  width: 5rem;
+  width: 5.5rem;
 }
+/*메인 메뉴*/
+
 .nav__menu {
-  display: flex;
+  display: block;
+  margin-left: -5rem;
 }
+
 .menu {
   display: flex;
   align-items: center;
 }
+
 .menu_item {
   position: relative;
-  margin: 0 1rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  display: inline-block;
+  margin: 6px 10px 0;
+  padding: 14px 6px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 800;
+  color: #424242;
+  cursor: pointer;
 }
 .menu_item:hover {
   color: mainColor;
 }
-
-.menu_item:after {
+.menu_item_clicked {
+  color: mainColor;
+}
+.menu_item_hovered:after {
   margin: 2px 0 0 -4px;
   border-width: 0 4.5px 9px;
   border-color: transparent transparent #fff;
   transform: translateX(-0.5px);
 }
-.menu_item:before {
+.menu_item_hovered:before {
   margin: 1px 0 0 -5px;
   border-width: 0 5px 10px;
   border-color: transparent transparent #dbdbdb;
 }
-.menu_item:after,
-.menu_item:before {
+
+.menu_item_hovered:after,
+.menu_item_hovered:before {
   content: "";
-  display: none;
+  display: flex;
   position: absolute;
-  padding-top: 1.3rem;
   top: 100%;
   left: 50%;
-  width: 0;
-  height: 0;
   border-style: solid;
 }
-.menu_item:hover:before,
-.menu_item:hover:after {
-  display: block;
-}
 
+/*검색창,회원메뉴,글쓰기 작성 버튼*/
 .nav__end {
   display: flex;
   align-items: center;
@@ -73,26 +84,34 @@
 }
 
 .input {
-  padding: 0.7rem 3rem 0.7rem 2.3rem;
+  padding: 0.7rem 5rem 0.7rem 2.8rem;
   border: 1px solid makerLightGrey2;
   border-radius: 0.2rem;
+}
+.input::placeholder {
+  color: makerLightGrey3;
+  font-size: 0.95rem;
+}
+.input:focus {
+  outline: none;
 }
 .search {
   width: 1rem;
   position: absolute;
-  top: 0.7rem;
-  left: 0.7rem;
+  top: 0.5rem;
+  left: 0.3rem;
 }
 
 .cart_button {
   padding: 0.3rem;
   border-radius: 50%;
+  margin: 0 0.7rem;
 }
 
 .cart {
   color: makerGrey;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .cart_button:hover .cart {
   color: white;
@@ -106,7 +125,7 @@
 }
 .personal_item {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   color: makerGrey;
 }
 .personal_item:hover {
@@ -122,6 +141,7 @@
   margin: 0 0.5rem;
   color: makerGrey;
 }
+
 .write {
   display: flex;
   align-items: center;
@@ -132,6 +152,17 @@
   font-weight: 900;
   font-size: 1rem;
 }
+.write:hover {
+  background-color: #09addb;
+}
 .arrowDown {
   margin-left: 0.5rem;
+}
+
+.sub_header {
+}
+.sub_header_hide {
+  z-index: 0;
+  transform: translateY(-3.5rem);
+  transition: 0.1s;
 }

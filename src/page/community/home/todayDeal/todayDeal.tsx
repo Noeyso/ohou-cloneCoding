@@ -4,6 +4,7 @@ import styles from "./todayDeal.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+
 function TodayDeal() {
   const [temp, setTemp] = useState(0);
   const [remain, setRemain] = useState(1752);
@@ -35,7 +36,7 @@ function TodayDeal() {
     console.log("move prev");
     if (temp >= 1168) {
       setTemp(temp - 1168);
-      setRemain(temp + 1168);
+      setRemain(remain + 1168);
       setStyle({ marginLeft: `${-(temp - 1168)}px` });
     } else {
       setTemp(0);
@@ -51,8 +52,14 @@ function TodayDeal() {
       </div>
       <div className={styles.carousel}>
         <div className={styles.list_prev}>
-          <button className={`${styles.move_btn} ${styles.left}`}>
-            <IoIosArrowBack color="#fff" size="1rem" onClick={movePrev} />
+          <button
+            className={temp === 0 ? "" : `${styles.move_btn} ${styles.left}`}
+          >
+            <IoIosArrowBack
+              className={temp === 0 ? styles.icon_hide : ""}
+              size="1.5rem"
+              onClick={movePrev}
+            />
           </button>
         </div>
         <ul className={styles.menu} style={style}>
@@ -78,10 +85,15 @@ function TodayDeal() {
             </li>
           ))}
         </ul>
-
         <div className={styles.list_next}>
-          <button className={`${styles.move_btn} ${styles.right}`}>
-            <IoIosArrowForward color="#fff" size="1rem" onClick={moveNext} />
+          <button
+            className={remain === 0 ? "" : `${styles.move_btn} ${styles.right}`}
+          >
+            <IoIosArrowForward
+              className={remain === 0 ? styles.icon_hide : ""}
+              size="1.5rem"
+              onClick={moveNext}
+            />
           </button>
         </div>
       </div>

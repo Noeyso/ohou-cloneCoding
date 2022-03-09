@@ -19,6 +19,8 @@ import {
   light,
   rental,
 } from "./itemData";
+import { IoIosArrowForward } from "react-icons/io";
+
 type Menu = {
   img: string;
   title: string;
@@ -231,6 +233,9 @@ function Best() {
           <li className={styles.more_container}>
             <div className={styles.more}>
               <span>베스트셀러 더보기</span>
+              <button className={styles.arrow}>
+                <IoIosArrowForward size="1.5rem" />
+              </button>
             </div>
           </li>
         </ul>

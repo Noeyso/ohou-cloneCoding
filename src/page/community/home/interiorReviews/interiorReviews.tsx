@@ -6,7 +6,7 @@ import { items } from "./itemData";
 
 function InteriorReviews() {
   return (
-    <section className="container">
+    <section className={styles.container}>
       <div className={styles.header}>
         <h2>유저들의 인테리어 시공리뷰</h2>
         <span>인테리어 전문가 더 찾기</span>

@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function OverseasShipping() {
   const [temp, setTemp] = useState(0);
-  const [remain, setRemain] = useState(1752);
+  const [remain, setRemain] = useState(576);
   const [style, setStyle] = useState<CSSProperties>({});
 
   function moveNext() {
@@ -16,10 +16,10 @@ function OverseasShipping() {
       return;
     }
     console.log("move next");
-    if (remain >= 1168) {
-      setRemain(remain - 1168);
-      setTemp(temp + 1168);
-      setStyle({ marginLeft: `${-(temp + 1168)}px` });
+    if (remain >= 1152) {
+      setRemain(remain - 1152);
+      setTemp(temp + 1152);
+      setStyle({ marginLeft: `${-(temp + 1152)}px` });
     } else {
       setTemp(temp + remain);
       setRemain(0);
@@ -33,10 +33,10 @@ function OverseasShipping() {
       return;
     }
     console.log("move prev");
-    if (temp >= 1168) {
-      setTemp(temp - 1168);
-      setRemain(temp + 1168);
-      setStyle({ marginLeft: `${-(temp - 1168)}px` });
+    if (temp >= 1152) {
+      setTemp(temp - 1152);
+      setRemain(remain + 1152);
+      setStyle({ marginLeft: `${-(temp - 1152)}px` });
     } else {
       setTemp(0);
       setRemain(remain + temp);
@@ -51,11 +51,17 @@ function OverseasShipping() {
       </div>
       <div className={styles.carousel}>
         <div className={styles.list_prev}>
-          <button className={`${styles.move_btn} ${styles.left}`}>
-            <IoIosArrowBack color="#fff" size="1rem" onClick={movePrev} />
+          <button
+            className={temp === 0 ? "" : `${styles.move_btn} ${styles.left}`}
+          >
+            <IoIosArrowBack
+              className={temp === 0 ? styles.icon_hide : ""}
+              size="1.5rem"
+              onClick={movePrev}
+            />
           </button>
         </div>
-        <ul className={styles.list}>
+        <ul className={styles.list} style={style}>
           {listItems.map((item) => (
             <li className={styles.item}>
               <div className={styles.img_container}>
@@ -74,8 +80,14 @@ function OverseasShipping() {
           ))}
         </ul>
         <div className={styles.list_next}>
-          <button className={`${styles.move_btn} ${styles.right}`}>
-            <IoIosArrowForward color="#fff" size="1rem" onClick={moveNext} />
+          <button
+            className={remain === 0 ? "" : `${styles.move_btn} ${styles.right}`}
+          >
+            <IoIosArrowForward
+              className={remain === 0 ? styles.icon_hide : ""}
+              size="1.5rem"
+              onClick={moveNext}
+            />
           </button>
         </div>
       </div>

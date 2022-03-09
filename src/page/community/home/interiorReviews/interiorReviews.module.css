@@ -1,5 +1,8 @@
 @value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
 
+.container {
+  margin: 2rem 0;
+}
 .header {
   display: flex;
   justify-content: space-between;

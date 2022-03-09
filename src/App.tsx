@@ -9,7 +9,9 @@ function App() {
   return (
     <div className={styles.container}>
       <BrowserRouter>
-        <Header />
+        <div className={styles.header}>
+          <Header />
+        </div>
         <div className={styles.page}>
           <Switch>
             <Route path="/">

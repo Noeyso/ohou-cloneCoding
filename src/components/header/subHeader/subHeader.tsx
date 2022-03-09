@@ -6,10 +6,10 @@ interface Props {
   menu: string[];
 }
 function SubHeader({ menu }: Props) {
-  const [isClicked, setIsClicked] = useState(false);
+  const [index, setIndex] = useState(0);
 
-  function clickMenu() {
-    setIsClicked(true);
+  function clickMenu(num: number) {
+    setIndex(num);
   }
 
   return (
@@ -17,7 +17,15 @@ function SubHeader({ menu }: Props) {
       <div className={styles.menu_container}>
         <ul className={styles.menu}>
           {menu.map((menuItem, idx) => (
-            <li className={styles.menu_item} key={idx} onClick={clickMenu}>
+            <li
+              className={
+                index === idx
+                  ? `${styles.menu_item} ${styles.menu_item_clicked}`
+                  : styles.menu_item
+              }
+              key={idx}
+              onClick={() => clickMenu(idx)}
+            >
               {menuItem}
             </li>
           ))}
