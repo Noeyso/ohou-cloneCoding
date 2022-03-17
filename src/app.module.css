@@ -1,7 +1,21 @@
 .container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
+}
+.page {
+  margin-top: 7rem;
+}
+.footer {
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    position: static;
+  }
 }

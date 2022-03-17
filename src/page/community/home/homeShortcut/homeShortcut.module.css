@@ -1,25 +1,57 @@
 @value makerLightGrey from "../../../../common/color.css";
 .container {
-  margin-top: 2rem;
+  padding: 3% 6%;
 }
 .menu {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .item {
   text-align: center;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.item:not(:last-child) {
-  margin-right: 3.5rem;
-}
+
 .item_img {
-  padding: 0.7rem;
+  width: calc(100vw / 16);
+  height: calc(100vw / 16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: makerLightGrey;
-  border-radius: 1.8rem;
-  margin-bottom: 0.5rem;
+  border-radius: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .item img {
-  width: 4rem;
+  width: 60%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .item {
+    font-size: 80%;
+  }
+  .item_img {
+    margin: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .menu {
+    justify-content: space-around;
+  }
+  .item {
+    font-size: 80%;
+  }
+  .item:not(:last-child) {
+  }
+  .item_img {
+    width: calc(100vw / 7);
+    height: calc(100vw / 7);
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }

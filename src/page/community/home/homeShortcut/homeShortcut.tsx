@@ -59,7 +59,7 @@ function HomeShortcut() {
           <div className={styles.item_img}>
             <img src={Fortune} alt="fortune" />
           </div>
-          22년 신년운세
+          <span>22년 신년운세</span>
         </li>
       </ul>
     </nav>

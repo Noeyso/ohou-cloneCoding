@@ -3,11 +3,12 @@
 .container {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 .content {
-  width: 1175px;
   display: flex;
   flex-direction: column;
+  padding: 0 60px;
 }
 .banner {
   width: 100%;
@@ -15,7 +16,6 @@
   margin-bottom: 3rem;
 }
 .about_member {
-  max-width: 1175px;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -40,4 +40,10 @@
 .member > span:nth-child(2) {
   color: makerGrey;
   font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    width: 100%;
+  }
 }

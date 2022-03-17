@@ -7,18 +7,28 @@ import React, {
 } from "react";
 import styles from "./homeHeader.module.css";
 import User from "../../../../common/images/user.png";
-import { slideImgArr } from "./itemData";
+import { slideImgArr, slideImgArr_hor } from "./itemData";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 function HomeHeader() {
   const [slideItems, setSlideItems] = useState(slideImgArr);
+  const [slideWidth, setSlideWidth] = useState(272);
   const size = slideItems.length;
-  const slideWidth = 272;
   const slideSpeed = 3000;
   const [currentLoopIdx, setCurrentLoopIdx] = useState(0);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log("윈도우 크기 : ", window.innerWidth);
+    if (window.innerWidth < 768) {
+      setSlideItems(slideImgArr_hor);
+      setSlideWidth(window.innerWidth);
+    } else if (window.innerWidth < 1024) {
+      setSlideItems(slideImgArr);
+      setSlideWidth(window.innerWidth * 0.25);
+      console.log(window.innerWidth * 0.25);
+    }
+  }, [window.innerWidth]);
 
   const getStaticIndex = useCallback(
     (loopIndex) => {
@@ -70,7 +80,12 @@ function HomeHeader() {
         </div>
       </div>
 
-      <div className={styles.top_banner}>
+      <div
+        style={{
+          width: `${slideWidth}px`,
+        }}
+        className={styles.top_banner}
+      >
         <div
           className={styles.slide_list_wrapper}
           style={{
@@ -90,7 +105,6 @@ function HomeHeader() {
             {Array(size * 2 + 1)
               .fill(1)
               .map((_, index) => {
-                console.log("redraw");
                 const loopIndexToShow = currentLoopIdx + index - size;
                 return {
                   staticIndex: getStaticIndex(loopIndexToShow),
@@ -99,11 +113,15 @@ function HomeHeader() {
               })
               .map(({ staticIndex, loopIndexToShow }, index) => (
                 <div
-                  style={{ width: `${slideWidth})px` }}
                   className={styles.slide_content}
+                  style={{ width: `${slideWidth}px` }}
                   key={loopIndexToShow}
                 >
-                  <img src={slideItems[staticIndex]} alt="slideContent" />
+                  <img
+                    style={{ width: `${slideWidth}px` }}
+                    src={slideItems[staticIndex]}
+                    alt="slideContent"
+                  />
                 </div>
               ))}
           </div>

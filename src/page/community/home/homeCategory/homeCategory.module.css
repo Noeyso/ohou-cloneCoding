@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  padding: 3%;
 }
 
 .container > h2 {
@@ -64,4 +64,7 @@
   opacity: 26%;
   border-radius: 10rem;
   margin-top: 3rem;
+}
+
+@media only screen and (max-width: 1112px) {
 }

@@ -69,21 +69,21 @@ function HomeStory() {
               <span>예쁜 집 구경하기</span>
               <span>집들이</span>
             </div>
-            <span>{">"}</span>
+            <span className={styles.arrow}>{">"}</span>
           </div>
           <div className={styles.menu_entry}>
             <div className={styles.menu_text}>
               <span>전문가 시공사례</span>
               <span>전문가 집들이</span>
             </div>
-            <span>{">"}</span>
+            <span className={styles.arrow}>{">"}</span>
           </div>
           <div className={styles.menu_entry}>
             <div className={styles.menu_text}>
               <span>인테리어 꿀팁 총 집합</span>
               <span>노하우</span>
             </div>
-            <span>{">"}</span>
+            <span className={styles.arrow}>{">"}</span>
           </div>
         </li>
       </ul>

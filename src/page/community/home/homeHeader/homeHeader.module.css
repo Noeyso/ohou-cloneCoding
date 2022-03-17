@@ -1,18 +1,18 @@
-@value makerLightGrey,mainColor from "../../../../common/color.css";
+@value makerLightGrey3,makerLightGrey,mainColor from "../../../../common/color.css";
 
 .container {
   display: flex;
-  height: 40rem;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 3%;
 }
 
 /*메인 이미지*/
 .top_story {
-  width: 53rem;
+  width: 70%;
   height: 100%;
   position: relative;
+  padding: 0 10px;
 }
 .top_story_img {
   width: 100%;
@@ -23,7 +23,7 @@
   width: 1.5rem;
 }
 .detail {
-  width: 49rem;
+  width: calc(100% - 83px);
   bottom: 0;
   border-radius: 0.3rem;
   padding: 2rem;
@@ -50,7 +50,7 @@
   width: 8.5rem;
   height: 3.3rem;
   border: 1px solid white;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   margin-top: 1rem;
   margin-right: 1rem;
   color: white;
@@ -65,13 +65,12 @@
 
 /*배너*/
 .top_banner {
-  height: 40rem;
-  width: 17rem;
+  height: 100%;
   overflow: hidden;
   position: relative;
+  margin: 0 10px;
 }
 .slide_list_wrapper {
-  width: 100%;
   height: 100%;
 }
 
@@ -81,7 +80,6 @@
 }
 
 .slide_content {
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -91,6 +89,7 @@
 }
 .slide_content img {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   border-radius: 0.3rem;
 }
@@ -131,4 +130,77 @@
   background-color: mainColor;
   border-radius: 50%;
   height: 2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .top_story {
+    width: 75%;
+  }
+  .detail_title {
+    font-size: 1.5rem;
+  }
+  .go_btn {
+    width: 6.9rem;
+    height: 2.7rem;
+    font-size: 0.95rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .top_story {
+    width: 100vw;
+    height: 68%;
+    padding: 0;
+  }
+  .top_story_img {
+    width: 100%;
+    border-radius: 0;
+  }
+  .detail {
+    width: 100%;
+    height: calc(100% - 4rem);
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .detail_user {
+    display: none;
+  }
+  .go_btn {
+    margin: 0;
+    width: 6.9rem;
+    height: 2.2rem;
+    font-size: 0.8rem;
+  }
+  .top_banner {
+    margin: 0;
+    height: 32%;
+  }
+  .slide_content,
+  .slide_content img {
+    border-radius: 0;
+    height: 100%;
+  }
+  .dots {
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    justify-content: start;
+    align-items: end;
+  }
+  .dot {
+    background-color: makerLightGrey3;
+  }
+  .dot_selected {
+    background-color: mainColor;
+  }
+  .slide_operation {
+    background: none;
+  }
+  .slide_btn {
+    display: none;
+  }
 }

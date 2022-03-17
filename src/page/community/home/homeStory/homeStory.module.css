@@ -1,7 +1,7 @@
 @value makerGrey,makerDarkGrey,makerLightGrey from "../../../../common/color.css";
 
 .container {
-  margin: 2rem 0;
+  padding: 3%;
 }
 
 header h2 {
@@ -11,13 +11,15 @@ header h2 {
 }
 .list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .list > li {
-  margin: 0 10px;
+  width: calc(100vw / 5);
 }
 .thumbnail img {
-  width: 17rem;
-  height: 11rem;
+  width: 100%;
+  height: calc(100vw / 7);
   object-fit: cover;
   border-radius: 0.3rem;
   margin-bottom: 0.8rem;
@@ -48,7 +50,6 @@ header h2 {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-
   background-color: makerLightGrey;
 }
 .menu_entry > span {
@@ -76,4 +77,61 @@ header h2 {
 }
 .menu > .menu_entry:nth-child(3) {
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+@media only screen and (max-width: 1112px) {
+  .container {
+    padding: 3% 8vw;
+  }
+  .list > li {
+    width: calc(100vw / 4.5);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    padding: 3%;
+  }
+  .list > li {
+    width: calc(100vw / 5);
+  }
+  .menu_entry {
+    padding: 1.5rem;
+  }
+  .menu_text > span:nth-child(1) {
+    font-size: 75%;
+  }
+  .menu_text > span:nth-child(2) {
+    font-size: 85%;
+  }
+  .arrow {
+    display: none;
+  }
+  .menu > .menu_entry:nth-child(1) {
+    border-radius: 0.2rem 0.2rem 0 0;
+  }
+  .menu > .menu_entry:nth-child(3) {
+    border-radius: 0 0 0.2rem 0.2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .list > li {
+    width: calc(100% / 2.03);
+    margin-bottom: 2.5rem;
+  }
+  .story_title {
+    font-size: 85%;
+  }
+  .user {
+    display: none;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: calc(100vw / 4);
+    object-fit: cover;
+    border-radius: 0.3rem;
+    margin-bottom: 0.8rem;
+  }
 }
