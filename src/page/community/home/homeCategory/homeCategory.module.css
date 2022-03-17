@@ -1,5 +1,3 @@
-@value makerDarkGrey from "../../../../common/color.css";
-
 .container {
   display: flex;
   flex-direction: column;
@@ -12,28 +10,26 @@
   padding-left: 0.5rem;
 }
 .carousel {
+  width: 100%;
   align-self: center;
   position: relative;
-  width: calc(7rem * 10);
   overflow: hidden;
 }
 .list {
   display: flex;
-  width: calc(7rem * 16);
   transition: 1s;
 }
 
 .list > li {
-  width: 5rem;
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
   text-align: center;
   font-weight: 700;
+  margin: 0 1rem;
   color: makerDarkGrey;
 }
 .list > li > img {
-  width: 5rem;
+  width: 100%;
   margin-bottom: 1.5rem;
 }
 
