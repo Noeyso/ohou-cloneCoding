@@ -48,11 +48,7 @@ function Home() {
         <InteriorReviews />
         <TodayExhibition />
         <OverseasShipping />
-        <img
-          className={styles.banner}
-          src="https://image.ohou.se/i/bucketplace-v2-development/uploads/home/marketing/164601332921793262.png?gif=1&w=2560"
-          alt="banner"
-        />
+
         <Best />
         <div className={styles.about_member}>
           <div className={styles.member}>
