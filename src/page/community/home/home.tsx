@@ -27,7 +27,10 @@ function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <HomeHeader />
+        <div className={styles.home_header}>
+          <HomeHeader />
+        </div>
+
         <HomeShortcut />
         <HomeStory />
         <HomeCategory />

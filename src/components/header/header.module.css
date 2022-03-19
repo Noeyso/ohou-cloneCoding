@@ -1,7 +1,12 @@
 @value mainColor,makerGrey,makerLightGrey,makerLightGrey1,makerLightGrey2,makerLightGrey3 from "../../common/color.css";
 .container {
+  width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: column;
+}
+.container_static {
+  position: fixed;
 }
 
 .top_container {
@@ -198,6 +203,15 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .container_show {
+    position: fixed;
+    transform: translateY(0);
+    transition: 0.5s;
+  }
+  .container_hide {
+    transform: translateY(-4rem);
+    transition: 0.5s;
+  }
   .nav__menu,
   .personal,
   .write {

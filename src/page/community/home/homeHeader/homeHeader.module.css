@@ -2,36 +2,57 @@
 
 .container {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+  justify-content: space-between;
   padding: 3%;
+  height: 100vh;
 }
 
 /*메인 이미지*/
 .top_story {
-  width: 70%;
+  width: 73%;
   height: 100%;
   position: relative;
-  padding: 0 10px;
+  cursor: pointer;
+}
+.top_story:hover .top_story_img img {
+  transform: scale(1.1);
+}
+.top_story:hover .go_btn {
+  border-color: mainColor;
+  background-color: mainColor;
 }
 .top_story_img {
   width: 100%;
   height: 100%;
+  position: absolute;
+  overflow: hidden;
   border-radius: 0.3rem;
+}
+.top_story_img img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0.3rem;
+  object-fit: fill;
+  transition: all 0.3s linear;
 }
 .user {
   width: 1.5rem;
 }
 .detail {
-  width: calc(100% - 83px);
+  width: calc(100%-2rem);
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
   border-radius: 0.3rem;
-  padding: 2rem;
+  padding: 0 1rem 3rem 2rem;
   position: absolute;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+  align-items: end;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
 }
 .detail_title {
   font-size: 2rem;
@@ -65,7 +86,6 @@
 
 /*배너*/
 .top_banner {
-  height: 100%;
   overflow: hidden;
   position: relative;
   margin: 0 10px;
@@ -147,11 +167,15 @@
 }
 @media only screen and (max-width: 768px) {
   .container {
+    width: 100%;
+    height: 43rem;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
   .top_story {
-    width: 100vw;
-    height: 68%;
+    width: 100%;
+    height: 70%;
     padding: 0;
   }
   .top_story_img {
@@ -159,12 +183,11 @@
     border-radius: 0;
   }
   .detail {
-    width: 100%;
-    height: calc(100% - 4rem);
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
   }
   .detail_user {
     display: none;
@@ -177,7 +200,7 @@
   }
   .top_banner {
     margin: 0;
-    height: 32%;
+    height: 30%;
   }
   .slide_content,
   .slide_content img {

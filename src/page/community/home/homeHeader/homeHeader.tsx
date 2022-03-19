@@ -61,11 +61,12 @@ function HomeHeader() {
   return (
     <div className={styles.container}>
       <div className={styles.top_story}>
-        <img
-          className={styles.top_story_img}
-          src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164111427310602212.jpg?gif=1&w=2560"
-          alt="story"
-        />
+        <div className={styles.top_story_img}>
+          <img
+            src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164111427310602212.jpg?gif=1&w=2560"
+            alt="story"
+          />
+        </div>
         <div className={styles.detail}>
           <div>
             <h1 className={styles.detail_title}>

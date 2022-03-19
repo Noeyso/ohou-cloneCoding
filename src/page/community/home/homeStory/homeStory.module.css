@@ -15,14 +15,27 @@ header h2 {
   justify-content: space-around;
 }
 .list > li {
-  width: calc(100vw / 5);
+  width: calc(100vw / 4.6);
+}
+.list > li:hover .thumbnail img {
+  transform: scale(1.1);
+}
+.thumbnail {
+  height: calc(100vw / 7);
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  border-radius: 0.3rem;
 }
 .thumbnail img {
+  max-width: 100%;
   width: 100%;
-  height: calc(100vw / 7);
-  object-fit: cover;
+  height: 100%;
+  max-height: 100%;
+
+  object-fit: fill;
   border-radius: 0.3rem;
-  margin-bottom: 0.8rem;
+
+  transition: all 0.3s linear;
 }
 .story_title {
   font-weight: 700;
@@ -117,7 +130,7 @@ header h2 {
 
 @media only screen and (max-width: 768px) {
   .list > li {
-    width: calc(100% / 2.03);
+    width: calc(100% / 2.06);
     margin-bottom: 2.5rem;
   }
   .story_title {
@@ -127,11 +140,11 @@ header h2 {
     display: none;
   }
 
+  .thumbnail {
+    height: calc(100vw / 3);
+  }
   .thumbnail img {
     width: 100%;
-    height: calc(100vw / 4);
-    object-fit: cover;
     border-radius: 0.3rem;
-    margin-bottom: 0.8rem;
   }
 }

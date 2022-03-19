@@ -17,6 +17,8 @@ function Header() {
   const [isUp, setIsUp] = useState(false);
   const delta = 5;
 
+  const [isResize, setIsResize] = useState(false);
+
   useEffect(() => {
     switch (hovIdx) {
       case 0:
@@ -34,6 +36,12 @@ function Header() {
   }, [hovIdx]);
 
   function updateScroll() {
+    if (window.innerWidth < 768) {
+      setIsResize(true);
+    } else {
+      setIsResize(false);
+    }
+
     console.log(`scrollTop: ${document.documentElement.scrollTop}`);
     //setScrollPosition(window.scrollY || document.documentElement.scrollTop);
     setIsScroll(true);
@@ -45,7 +53,6 @@ function Header() {
       if (isScroll) {
         hasScrolled();
         setIsScroll(false);
-        console.log("h");
       }
     }, 250);
     return () => clearInterval(scrollTimer);
@@ -61,6 +68,7 @@ function Header() {
     } else {
       setIsUp(false);
     }
+
     setScrollPosition(st);
   }
 
@@ -75,7 +83,15 @@ function Header() {
   }
 
   return (
-    <header className={styles.container}>
+    <header
+      className={
+        isResize
+          ? isUp
+            ? `${styles.container} ${styles.container_hide}`
+            : `${styles.container} ${styles.container_show}`
+          : styles.container
+      }
+    >
       <div className={styles.top_container}>
         <button className={styles.button__open_menu}>
           <AiOutlineMenu size="1.5rem" />
