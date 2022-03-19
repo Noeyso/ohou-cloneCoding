@@ -115,11 +115,14 @@
     margin: 0;
   }
   .review_container {
-    width: 61%;
+    width: 60%;
     font-size: 0.9rem;
     padding-left: 1rem;
   }
   .stars {
     margin: 0;
   }
+}
+
+@media only screen and (max-width: 375px) {
 }
