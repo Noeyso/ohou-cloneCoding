@@ -9,7 +9,6 @@ body {
   white-space: pre-wrap;
   display: flex;
   flex-direction: column;
-  white-space: nowrap;
 }
 
 code {

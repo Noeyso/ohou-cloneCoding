@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { items } from "./itemData";
 import styles from "./popularPhotos.module.css";
 import User from "../../../../common/images/user.png";
 import { IoCopy } from "react-icons/io5";
 function PopularPhotos() {
+  const [isResize, setIsResize] = useState(false);
+  function updateResize() {
+    if (window.innerWidth < 768) {
+      setIsResize(true);
+    } else {
+      setIsResize(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateResize);
+  }, []);
   return (
     <section className={styles.container}>
       <div className={styles.header}>
@@ -28,6 +39,7 @@ function PopularPhotos() {
           </li>
         ))}
       </ul>
+      {isResize && <div className={styles.more}>인기 사진 더보기</div>}
     </section>
   );
 }

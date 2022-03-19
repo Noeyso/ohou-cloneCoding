@@ -50,18 +50,42 @@ function Footer() {
         </section>
         <section className={styles.shortcut}>
           <ul className={styles.shortcut_list}>
-            <li>브랜드 스토리</li>
-            <li>회사소개</li>
-            <li>채용정보</li>
-            <li>이용약관</li>
-            <li>개인정보처리방침</li>
-            <li>공지사항</li>
-            <li>고객센터</li>
-            <li>고객의 소리</li>
-            <li>전문가 등록</li>
-            <li>사업자 구매회원</li>
-            <li>제휴/광고 문의</li>
-            <li>입점신청 문의</li>
+            <li>
+              <a href={"/"}>브랜드 스토리</a>
+            </li>
+            <li>
+              <a href={"/"}>회사소개</a>
+            </li>
+            <li>
+              <a href={"/"}>채용정보</a>
+            </li>
+            <li>
+              <a href={"/"}>이용약관</a>
+            </li>
+            <li>
+              <a href={"/"}>개인정보처리방침</a>
+            </li>
+            <li>
+              <a href={"/"}>공지사항</a>
+            </li>
+            <li>
+              <a href={"/"}>고객센터</a>
+            </li>
+            <li>
+              <a href={"/"}>고객의 소리</a>
+            </li>
+            <li>
+              <a href={"/"}>전문가 등록</a>
+            </li>
+            <li>
+              <a href={"/"}>사업자 구매회원</a>
+            </li>
+            <li>
+              <a href={"/"}>제휴/광고 문의</a>
+            </li>
+            <li>
+              <a href={"/"}>입점신청 문의</a>
+            </li>
           </ul>
         </section>
         <address className={styles.info_wrap}>

@@ -12,22 +12,27 @@ import { menuItems } from "./itemData";
 
 function HomeCategory() {
   const totalItem = menuItems.length;
-  const showItem = 10;
+  const [showItem, setShowItem] = useState(10);
   const slideItem = 5;
-  const [width, setWidth] = useState(112);
-  // const [temp, setTemp] = useState(0);
-  // const [remain, setRemain] = useState(width * (totalItem - showItem));
   const [temp, setTemp] = useState(0);
   const [remain, setRemain] = useState(totalItem - showItem);
-  const [interval, setInterval] = useState(width * slideItem);
-  const [style, setStyle] = useState<CSSProperties>({});
   const [margin, setMargin] = useState(0);
-  const [pullScreen, setPullScreen] = useState(0);
-  const divRef = createRef<HTMLDivElement>();
-  console.log(`carousel width : ${divRef.current?.clientWidth}`);
+
+  function updateResize() {
+    if (window.innerWidth < 768) {
+      setMargin(0);
+      setShowItem(4);
+    } else if (window.innerWidth < 1024) {
+      setMargin(0);
+      setShowItem(6);
+    } else {
+      setMargin(0);
+      setShowItem(10);
+    }
+  }
   useEffect(() => {
-    console.log(`carousel width : ${divRef.current?.clientWidth}`);
-  }, [window.innerWidth]);
+    window.addEventListener("scroll", updateResize);
+  }, []);
 
   function moveNext() {
     console.log(`temp: ${temp} remain:${remain}`);
@@ -39,12 +44,10 @@ function HomeCategory() {
     if (remain >= slideItem) {
       setRemain(remain - slideItem);
       setTemp(temp + slideItem);
-      //setStyle({ marginLeft: `${-(temp + interval)}px` });
       setMargin(temp + slideItem);
     } else {
       setTemp(temp + remain);
       setRemain(0);
-      //setStyle({ marginLeft: `${-(temp + remain)}px` });
       setMargin(temp + remain);
     }
   }
@@ -58,19 +61,17 @@ function HomeCategory() {
     if (temp >= slideItem) {
       setTemp(temp - slideItem);
       setRemain(remain + slideItem);
-      //setStyle({ marginLeft: `${-(temp - slideItem)}px` });
       setMargin(temp - slideItem);
     } else {
       setTemp(0);
       setRemain(remain + temp);
-      //setStyle({ marginLeft: `${0}px` });
       setMargin(0);
     }
   }
   return (
     <section className={styles.container}>
       <h2>카테고리별 상품 찾기</h2>
-      <div ref={divRef} className={styles.carousel}>
+      <div className={styles.carousel}>
         <div className={styles.list_prev}>
           <button
             className={temp === 0 ? "" : `${styles.move_btn} ${styles.left}`}
@@ -88,7 +89,9 @@ function HomeCategory() {
         >
           {menuItems.map((item, idx) => (
             <li key={idx} style={{ width: `calc( 100% / ${showItem})` }}>
-              <img src={item.img} alt="icon" />
+              <div className={styles.img_container}>
+                <img src={item.img} alt="icon" />
+              </div>
               {item.text}
             </li>
           ))}

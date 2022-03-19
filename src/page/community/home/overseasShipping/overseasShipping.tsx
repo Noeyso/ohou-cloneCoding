@@ -1,13 +1,29 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import { listItems } from "./itemData";
 import styles from "./overseasShipping.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 function OverseasShipping() {
+  const totalItem = listItems.length;
+  const [showItem, setShowItem] = useState(4);
+  const slideItem = 4;
   const [temp, setTemp] = useState(0);
-  const [remain, setRemain] = useState(576);
-  const [style, setStyle] = useState<CSSProperties>({});
+  const [remain, setRemain] = useState(totalItem - showItem);
+  const [margin, setMargin] = useState(0);
+
+  function updateResize() {
+    if (window.innerWidth < 768) {
+      setMargin(0);
+      setShowItem(2.5);
+    } else {
+      setMargin(0);
+      setShowItem(4);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateResize);
+  }, []);
 
   function moveNext() {
     console.log(`temp: ${temp} remain:${remain}`);
@@ -16,14 +32,14 @@ function OverseasShipping() {
       return;
     }
     console.log("move next");
-    if (remain >= 1152) {
-      setRemain(remain - 1152);
-      setTemp(temp + 1152);
-      setStyle({ marginLeft: `${-(temp + 1152)}px` });
+    if (remain >= slideItem) {
+      setRemain(remain - slideItem);
+      setTemp(temp + slideItem);
+      setMargin(temp + slideItem);
     } else {
       setTemp(temp + remain);
       setRemain(0);
-      setStyle({ marginLeft: `${-(temp + remain)}px` });
+      setMargin(temp + remain);
     }
   }
   function movePrev() {
@@ -33,20 +49,20 @@ function OverseasShipping() {
       return;
     }
     console.log("move prev");
-    if (temp >= 1152) {
-      setTemp(temp - 1152);
-      setRemain(remain + 1152);
-      setStyle({ marginLeft: `${-(temp - 1152)}px` });
+    if (temp >= slideItem) {
+      setTemp(temp - slideItem);
+      setRemain(remain + slideItem);
+      setMargin(temp - slideItem);
     } else {
       setTemp(0);
       setRemain(remain + temp);
-      setStyle({ marginLeft: `${0}px` });
+      setMargin(0);
     }
   }
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2>해외 프리미엄도 원하는 날, 오늘의집배송 ~50%</h2>
+        <h2>해외 프리미엄 인기 상품 모아보기!</h2>
         <span>더보기</span>
       </div>
       <div className={styles.carousel}>
@@ -61,9 +77,18 @@ function OverseasShipping() {
             />
           </button>
         </div>
-        <ul className={styles.list} style={style}>
+        <ul
+          className={styles.list}
+          style={{
+            width: `calc(100% + 100% * ${(totalItem - showItem) / showItem})`,
+            marginLeft: `calc( 100% / ${showItem} * ${-margin})`,
+          }}
+        >
           {listItems.map((item) => (
-            <li className={styles.item}>
+            <li
+              className={styles.item}
+              style={{ width: `calc( 100% / ${showItem})` }}
+            >
               <div className={styles.img_container}>
                 <img src={item.img} alt="thumbnail" />
               </div>

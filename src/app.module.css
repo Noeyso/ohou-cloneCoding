@@ -1,15 +1,13 @@
 .container {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 .header {
+  width: 100%;
   position: fixed;
-  top: 0;
   z-index: 10;
 }
 .page {
-  margin-top: 7rem;
 }
 .footer {
 }

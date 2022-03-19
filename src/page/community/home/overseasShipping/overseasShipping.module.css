@@ -4,13 +4,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 2rem;
+  padding: 3%;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 0.95rem;
 }
 .header h2 {
   font-size: 1.3rem;
@@ -21,13 +22,12 @@
 }
 /*캐러셀*/
 .carousel {
-  width: calc(12rem * 6);
+  width: 100%;
   overflow: hidden;
 }
 
 .list {
   display: flex;
-  width: calc(12rem * 9);
   transition: 0.5s;
 }
 .item {
@@ -65,10 +65,10 @@
 }
 
 .list_prev {
-  left: 0;
+  left: 1rem;
 }
 .list_next {
-  right: 0;
+  right: 1rem;
 }
 
 .move_btn {
@@ -89,4 +89,17 @@
 }
 .icon_hide {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header span {
+    display: none;
+  }
+  .list_next,
+  .list_prev {
+    display: none;
+  }
+  .carousel {
+    overflow: auto;
+  }
 }

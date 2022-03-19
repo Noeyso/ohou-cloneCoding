@@ -1,5 +1,7 @@
 @value mainColor,makerGrey,makerLightGrey,makerLightGrey1,makerLightGrey2,makerLightGrey3 from "../../common/color.css";
 .container {
+  display: flex;
+  flex-direction: column;
 }
 
 .top_container {
@@ -8,10 +10,6 @@
   align-items: center;
   padding: 10px 60px;
   z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   border-bottom: 1px solid makerLightGrey1;
   background-color: white;
 }
@@ -174,10 +172,7 @@
 }
 
 .sub_header {
-  position: fixed;
-  top: 5rem;
-  left: 0;
-  right: 0;
+  width: 100%;
 }
 .sub_header_hide {
   z-index: 0;

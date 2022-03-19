@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Best from "./best/best";
 import styles from "./home.module.css";
 import HomeCategory from "./homeCategory/homeCategory";
@@ -13,6 +13,17 @@ import TodayDeal from "./todayDeal/todayDeal";
 import TodayExhibition from "./todayExhibition/todayExhibition";
 
 function Home() {
+  const [isResize, setIsResize] = useState(false);
+  function updateResize() {
+    if (window.innerWidth < 768) {
+      setIsResize(true);
+    } else {
+      setIsResize(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateResize);
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -24,7 +35,11 @@ function Home() {
         <PopularPhotos />
         <img
           className={styles.banner}
-          src="https://image.ohou.se/i/bucketplace-v2-development/uploads/home/marketing/164275275904243279.jpg?gif=1&w=2560"
+          src={
+            isResize
+              ? "https://image.ohou.se/i/bucketplace-v2-development/uploads/home/marketing/164723979289495348.jpg?gif=1&w=1536"
+              : "https://image.ohou.se/i/bucketplace-v2-development/uploads/home/marketing/164723978136971589.jpg?gif=1&w=2560"
+          }
           alt="banner"
         />
         <InteriorReviews />
@@ -39,11 +54,11 @@ function Home() {
         <div className={styles.about_member}>
           <div className={styles.member}>
             <span>전문가 가입신청</span>
-            <span>인테리어 전문가님! 오늘의집과 함께하세요 {">"}</span>
+            <span>인테리어 전문가님! 오늘의집과 함께하세요</span>
           </div>
           <div className={styles.member}>
             <span>사업자 구매 회원 전환</span>
-            <span>사업자 회원에게 구매 시 혜택을 드립니다 {">"}</span>
+            <span>사업자 회원에게 구매 시 혜택을 드립니다</span>
           </div>
         </div>
       </div>

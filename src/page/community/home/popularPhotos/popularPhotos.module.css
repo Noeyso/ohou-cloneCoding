@@ -1,7 +1,8 @@
-@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
+@value makerGrey,makerLightGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
 
 .container {
   margin-top: 5rem;
+  padding: 3%;
 }
 
 .header {
@@ -67,4 +68,22 @@
 }
 .user_info > span {
   margin-left: 0.1rem;
+}
+.more {
+  color: makerDarkGrey;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  background-color: makerLightGrey;
+}
+
+@media only screen and (max-width: 768px) {
+  .item {
+    width: 50%;
+  }
+  .item:nth-last-child(1),
+  .item:nth-last-child(2) {
+    display: none;
+  }
 }

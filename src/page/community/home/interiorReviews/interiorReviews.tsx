@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./interiorReviews.module.css";
 import User from "../../../../common/images/user.png";
 import { AiFillStar } from "react-icons/ai";
 import { items } from "./itemData";
 
 function InteriorReviews() {
+  const [isResize, setIsResize] = useState(false);
+  function updateResize() {
+    if (window.innerWidth < 768) {
+      setIsResize(true);
+    } else {
+      setIsResize(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateResize);
+  }, []);
+
   return (
     <section className={styles.container}>
       <div className={styles.header}>
@@ -18,26 +30,25 @@ function InteriorReviews() {
               <div className={styles.img_container}>
                 <img src={item.img} alt="thumbnail" className={styles.img} />
               </div>
-              <div className={styles.stars}>
-                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-                <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
-              </div>
-              <span>
-                {item.des.length > 95
-                  ? `${item.des.substring(0, 95)}...`
-                  : item.des}
-              </span>
-              <div className={styles.profile}>
-                <img className={styles.user} src={User} alt="user" />
-                <span>{item.nickname}</span>
+              <div className={styles.review_container}>
+                <div className={styles.stars}>
+                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                  <AiFillStar width="1.1rem" height="1.1rem" color="#35c5f0" />
+                </div>
+                <div className={styles.review}>{item.des}</div>
+                <div className={styles.profile}>
+                  <img className={styles.user} src={User} alt="user" />
+                  <span>{item.nickname}</span>
+                </div>
               </div>
             </div>
           </li>
         ))}
       </ul>
+      {isResize && <div className={styles.more}>인테리어 전문가 더 찾기</div>}
     </section>
   );
 }

@@ -1,7 +1,8 @@
-@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor from "../../../../common/color.css";
+@value makerGrey,makerPink,makerDarkGrey,makerLightGrey1,mainColor,makerLightGrey3 from "../../../../common/color.css";
 
 .container {
   position: relative;
+  padding: 3%;
 }
 .header {
   display: flex;
@@ -19,33 +20,43 @@
 
 /*캐러셀*/
 .carousel {
-  width: calc(18.25rem * 4);
+  width: 100%;
   overflow: hidden;
 }
 .menu {
   display: flex;
-  width: calc(18.25rem * 10);
   transition: 0.5s;
 }
-.item {
-  width: 17rem;
-  padding: 0 0.625rem;
+.menu > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.625rem;
 }
-
+.menu > li:hover .img_box img {
+  transform: scale(1.1);
+}
+.menu > li:hover .title {
+  color: makerLightGrey3;
+}
 .img_box {
   width: 100%;
-  height: 17rem;
   overflow: hidden;
   border-radius: 0.3rem;
   position: relative;
 }
 .img_box img {
-  max-width: 100%;
+  width: 100%;
+  border-radius: 0.3rem;
   transition: all 0.3s linear;
 }
 
-.img_box img:hover {
-  transform: scale(1.1);
+.product_info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 }
 .company {
   font-size: 0.7rem;
@@ -60,32 +71,96 @@
   margin-top: 0.3rem;
 }
 .item_price {
-  font-weight: 700;
   font-size: 1.1rem;
   line-height: 1.5rem;
+  margin-top: 0.3rem;
+  font-weight: 800;
 }
 .sale {
   color: makerPink;
+  margin-right: 0.3rem;
 }
 .item_status {
+  display: flex;
+  align-items: center;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
 }
+
 .rate {
   margin: 0 0.2rem 0 0.1rem;
   color: makerDarkGrey;
 }
 .review {
-  color: makerGrey;
+  color: makerLightGrey3;
 }
 
 .freeShip {
-  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  padding: 0.3rem;
+  margin-top: 0.3rem;
   border-radius: 0.2rem;
-  font-size: 0.2rem;
-  font-weight: 700;
+  font-size: 0.5rem;
+  font-weight: 800;
   color: makerGrey;
   background-color: makerLightGrey1;
+}
+
+/*아이템 한개*/
+.product_one {
+  overflow: auto;
+}
+.one {
+  width: 101%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.one_img {
+  width: 50%;
+}
+.one_img img {
+  width: 100%;
+  border-radius: 0.3rem;
+}
+.one_info {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1rem;
+  color: makerPink;
+  font-weight: 800;
+}
+.one_tag {
+  display: flex;
+  justify-content: center;
+  width: 3.5rem;
+  padding: 0.2rem;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border-radius: 0.3rem;
+  background-color: makerPink;
+}
+.one_title {
+  display: block;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: makerDarkGrey;
+}
+.one_sale {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  color: makerPink;
+}
+.one_sale span {
+  font-size: 3rem;
+  margin-right: 0.1rem;
 }
 
 .list_prev,
@@ -121,4 +196,14 @@
 }
 .icon_hide {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header span {
+    display: none;
+  }
+  .list_prev,
+  .list_next {
+    display: none;
+  }
 }

@@ -104,7 +104,7 @@ function Best() {
     }
   }
   return (
-    <section className="container">
+    <section className={styles.container}>
       <div className={styles.header}>
         <h2>베스트</h2>
       </div>
@@ -217,28 +217,40 @@ function Best() {
         </li>
       </ul>
       <section>
-        <ul className={styles.list}>
-          {items.map((item) => (
-            <li>
-              <div className={styles.img_container}>
-                <img src={item.img} alt="" />
+        <div className={styles.list_container}>
+          <ul className={styles.list}>
+            {items.map((item) => (
+              <li>
+                <div className={styles.img_container}>
+                  <img src={item.img} alt="" />
+                </div>
+                <div className={styles.product_info}>
+                  <span className={styles.title}>{item.title}</span>
+                  <div className={styles.item_price}>
+                    <span className={styles.sale}>
+                      {item.sale > 0 ? `${item.sale}%` : ""}
+                    </span>
+                    <span className={styles.price}>
+                      {item.price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    </span>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.more}>
+            <div className={styles.more_container}>
+              <div className={styles.more_content}>
+                <span>베스트셀러 더보기</span>
+                <button className={styles.arrow}>
+                  <IoIosArrowForward size="1.5rem" />
+                </button>
               </div>
-              <span>{item.title}</span>
-              <div>
-                <span>{item.sale > 0 ? `${item.sale}%` : ""}</span>
-                <span>{item.price}</span>
-              </div>
-            </li>
-          ))}
-          <li className={styles.more_container}>
-            <div className={styles.more}>
-              <span>베스트셀러 더보기</span>
-              <button className={styles.arrow}>
-                <IoIosArrowForward size="1.5rem" />
-              </button>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
     </section>
   );

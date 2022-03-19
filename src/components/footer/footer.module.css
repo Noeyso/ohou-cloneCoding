@@ -4,21 +4,22 @@
   display: flex;
   justify-content: center;
   background-color: #fafafa;
+  padding: 3%;
 }
 .footer {
-  width: 1175px;
+  width: 100%;
   margin: 2rem 0;
 }
 .top {
   display: flex;
   justify-content: space-between;
+  color: makerDarkGrey;
 }
 .customer_center {
   display: flex;
   flex-direction: column;
 }
 .customer_center > a {
-  color: makerDarkGrey;
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -29,6 +30,7 @@
 }
 .hours {
   font-size: 0.85rem;
+  color: makerGrey;
 }
 
 .icons {
@@ -41,25 +43,32 @@
 }
 
 .shortcut_list {
-  display: flex;
-  align-items: center;
   font-size: 0.7rem;
   color: makerDarkGrey;
   margin-top: 2rem;
-}
-.shortcut_list > li {
-  margin-right: 0.4rem;
-}
-.info_wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  word-break: keep-all;
 }
 
+.shortcut_list > li {
+  display: inline;
+}
+.shortcut_list > li > a {
+  display: inline-block;
+  margin: 0 3px;
+  padding: 2px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #424242;
+  line-height: 16px;
+}
+.info_wrap {
+  flex-direction: column;
+  word-break: keep-all;
+}
 .info {
-  display: flex;
+  display: inline-block;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: makerGrey;
   margin-top: 0.4rem;
 }
@@ -69,13 +78,16 @@
 
 dl a,
 dl span {
-  display: flex;
+  display: inline-block;
   margin-right: 0.3rem;
   color: makerGrey;
 }
 
-dl span dd {
-  display: flex;
+dl,
+span,
+dd,
+dt {
+  display: inline-block;
 }
 
 .copyright {
@@ -96,4 +108,20 @@ dl span dd {
   margin-left: 0.3rem;
   line-height: 0.9rem;
   color: makerGrey;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    justify-content: flex-start;
+  }
+  .top {
+    flex-direction: column;
+  }
+  .icons {
+    margin-top: 2rem;
+  }
+
+  .info {
+    align-items: flex-start;
+  }
 }

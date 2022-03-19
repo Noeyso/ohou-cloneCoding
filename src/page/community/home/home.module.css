@@ -1,4 +1,4 @@
-@value makerLightGrey,makerDarkGrey,makerGrey from "../../../common/color.css";
+@value makerLightGrey2,makerLightGrey,makerDarkGrey,makerGrey from "../../../common/color.css";
 
 .container {
   display: flex;
@@ -9,7 +9,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 60px;
 }
 .banner {
   width: 100%;
@@ -18,19 +17,20 @@
 }
 .about_member {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem;
-  margin: 2rem 0;
+  padding: 3%;
 }
 
 .member {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35rem;
+  width: 49%;
   padding: 1.5rem 0;
   border-radius: 0.5rem;
   background-color: makerLightGrey;
+  cursor: pointer;
 }
 
 .member > span:nth-child(1) {
@@ -43,8 +43,65 @@
   font-size: 0.8rem;
 }
 
+.member > span:nth-child(2)::after {
+  content: "";
+  width: 5px; /* 사이즈 */
+  height: 5px; /* 사이즈 */
+  border-top: 1px solid makerGrey; /* 선 두께 */
+  border-right: 1px solid makerGrey; /* 선 두께 */
+  display: inline-block;
+  margin-left: 0.1rem;
+  margin-bottom: 0.1rem;
+
+  transform: rotate(45deg); /* 각도 */
+}
+
 @media only screen and (max-width: 1024px) {
   .content {
     width: 100%;
+  }
+  .member {
+    flex-direction: column;
+    align-items: start;
+  }
+  .member span {
+    padding-left: 1.5rem;
+  }
+  .member > span:nth-child(1)::after {
+    content: "";
+    width: 4px; /* 사이즈 */
+    height: 4px; /* 사이즈 */
+    border-top: 1px solid black; /* 선 두께 */
+    border-right: 1px solid black; /* 선 두께 */
+    display: inline-block;
+    margin-left: 0.2rem;
+    margin-bottom: 0.2rem;
+
+    transform: rotate(45deg); /* 각도 */
+  }
+  .member > span:nth-child(2) {
+    padding-top: 0.3rem;
+  }
+
+  .member > span:nth-child(2)::after {
+    content: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about_member {
+    flex-direction: column;
+  }
+  .member {
+    width: 100%;
+    background: none;
+    border-radius: 0;
+    border-top: 1px solid makerLightGrey2;
+  }
+  .member:hover {
+    background: makerLightGrey;
+  }
+  .member:nth-child(2) {
+    border-bottom: 1px solid makerLightGrey2;
   }
 }
