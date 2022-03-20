@@ -41,7 +41,6 @@
   width: 1.5rem;
 }
 .detail {
-  width: calc(100%-2rem);
   top: 0;
   left: 0;
   right: 0;
