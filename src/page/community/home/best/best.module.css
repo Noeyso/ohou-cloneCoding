@@ -81,6 +81,7 @@
 }
 
 .img_container {
+  display: flex;
   width: 100%;
   overflow: hidden;
   border-radius: 0.5rem;

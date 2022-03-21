@@ -99,7 +99,9 @@ function OverseasShipping() {
               </span>
               <div className={styles.price_info}>
                 <span className={styles.sale}>{item.sale}%</span>
-                <span className={styles.price}>{item.price}</span>
+                <span className={styles.price}>
+                  {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </span>
               </div>
             </li>
           ))}

@@ -3,6 +3,9 @@
   flex-direction: column;
 }
 .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 .page {
@@ -11,7 +14,4 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .header {
-    position: static;
-  }
 }

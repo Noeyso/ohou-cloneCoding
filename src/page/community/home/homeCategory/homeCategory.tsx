@@ -1,10 +1,4 @@
-import React, {
-  CSSProperties,
-  useState,
-  useEffect,
-  useRef,
-  createRef,
-} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./homeCategory.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";

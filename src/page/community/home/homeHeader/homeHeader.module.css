@@ -3,13 +3,13 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 3%;
+  padding: 4%;
   height: 100vh;
 }
 
 /*메인 이미지*/
 .top_story {
-  width: 73%;
+  width: 76%;
   height: 100%;
   position: relative;
   cursor: pointer;
@@ -85,9 +85,10 @@
 
 /*배너*/
 .top_banner {
-  overflow: hidden;
   position: relative;
-  margin: 0 10px;
+  overflow: hidden;
+  margin-left: 10px;
+  border-radius: 0.3rem;
 }
 .slide_list_wrapper {
   height: 100%;

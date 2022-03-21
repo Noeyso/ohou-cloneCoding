@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import LogoImg from "../../common/images/logoImg.png";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -43,7 +43,6 @@ function Header() {
     }
 
     console.log(`scrollTop: ${document.documentElement.scrollTop}`);
-    //setScrollPosition(window.scrollY || document.documentElement.scrollTop);
     setIsScroll(true);
   }
   useEffect(() => {

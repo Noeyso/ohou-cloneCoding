@@ -2,7 +2,6 @@ import React, {
   useCallback,
   useEffect,
   useLayoutEffect,
-  useRef,
   useState,
 } from "react";
 import styles from "./homeHeader.module.css";
@@ -18,8 +17,7 @@ function HomeHeader() {
   const slideSpeed = 3000;
   const [currentLoopIdx, setCurrentLoopIdx] = useState(0);
 
-  useEffect(() => {
-    console.log("윈도우 크기 : ", window.innerWidth);
+  function updateResize() {
     if (window.innerWidth < 768) {
       setSlideItems(slideImgArr_hor);
       setSlideWidth(window.innerWidth);
@@ -28,7 +26,10 @@ function HomeHeader() {
       setSlideWidth(window.innerWidth * 0.25);
       console.log(window.innerWidth * 0.25);
     }
-  }, [window.innerWidth]);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateResize);
+  }, []);
 
   const getStaticIndex = useCallback(
     (loopIndex) => {

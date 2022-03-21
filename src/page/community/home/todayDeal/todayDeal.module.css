@@ -40,6 +40,7 @@
   color: makerLightGrey3;
 }
 .img_box {
+  display: flex;
   width: 100%;
   overflow: hidden;
   border-radius: 0.3rem;

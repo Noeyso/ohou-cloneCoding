@@ -11,7 +11,6 @@
   flex-direction: column;
 }
 .home_header {
-  margin-top: 10%;
 }
 .banner {
   width: 100%;
@@ -92,9 +91,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .home_header {
-    margin-top: 13.5%;
-  }
   .about_member {
     flex-direction: column;
   }
