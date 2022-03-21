@@ -24,7 +24,9 @@ function HomeHeader() {
     } else if (window.innerWidth < 1024) {
       setSlideItems(slideImgArr);
       setSlideWidth(window.innerWidth * 0.25);
-      console.log(window.innerWidth * 0.25);
+    } else {
+      setSlideItems(slideImgArr);
+      setSlideWidth(272);
     }
   }
   useEffect(() => {
