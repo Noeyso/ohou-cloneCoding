@@ -2,9 +2,7 @@
 
 ## 배포(Netlify)
 
-https://623889f17366675cb1297532--clone-ohou.netlify.app
-
-(임시 링크 - 완료됐다고 생각하면 최종배포 해야지)
+https://clone-ohou.netlify.app/
 
 ## 프로젝트 설명
 
