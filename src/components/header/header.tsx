@@ -7,6 +7,7 @@ import { BsCart } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import SubHeader from "./subHeader/subHeader";
 import { community, interior, store } from "./itemData";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [clickIdx, setClickIdx] = useState(0);
@@ -100,66 +101,72 @@ function Header() {
         </div>
         <nav className={styles.nav__menu}>
           <ul className={styles.menu}>
-            <li
-              className={
-                clickIdx === 0
-                  ? `${
-                      hovIdx === 0 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
-                        : `${styles.menu_item} ${styles.menu_item_clicked}`
-                    }`
-                  : `${
-                      hovIdx === 0 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_hovered}`
-                        : styles.menu_item
-                    }`
-              }
-              onClick={() => clickMenu(0)}
-              onMouseEnter={() => mouseEnter(0)}
-              onMouseLeave={mouseLeave}
-            >
+            <Link to="/">
+              <li
+                className={
+                  clickIdx === 0
+                    ? `${
+                        hovIdx === 0 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
+                          : `${styles.menu_item} ${styles.menu_item_clicked}`
+                      }`
+                    : `${
+                        hovIdx === 0 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_hovered}`
+                          : styles.menu_item
+                      }`
+                }
+                onClick={() => clickMenu(0)}
+                onMouseEnter={() => mouseEnter(0)}
+                onMouseLeave={mouseLeave}
+              >
               커뮤니티
             </li>
-            <li
-              className={
-                clickIdx === 1
-                  ? `${
-                      hovIdx === 1 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
-                        : `${styles.menu_item} ${styles.menu_item_clicked}`
-                    }`
-                  : `${
-                      hovIdx === 1 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_hovered}`
-                        : styles.menu_item
-                    }`
-              }
-              onClick={() => clickMenu(1)}
-              onMouseEnter={() => mouseEnter(1)}
-              onMouseLeave={mouseLeave}
-            >
-              스토어
-            </li>
-            <li
-              className={
-                clickIdx === 2
-                  ? `${
-                      hovIdx === 2 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
-                        : `${styles.menu_item} ${styles.menu_item_clicked}`
-                    }`
-                  : `${
-                      hovIdx === 2 && !isUp
-                        ? `${styles.menu_item} ${styles.menu_item_hovered}`
-                        : styles.menu_item
-                    }`
-              }
-              onClick={() => clickMenu(2)}
-              onMouseEnter={() => mouseEnter(2)}
-              onMouseLeave={mouseLeave}
-            >
-              인테리어시공
-            </li>
+            </Link>
+            <Link to="/store">
+              <li
+                className={
+                  clickIdx === 1
+                    ? `${
+                        hovIdx === 1 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
+                          : `${styles.menu_item} ${styles.menu_item_clicked}`
+                      }`
+                    : `${
+                        hovIdx === 1 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_hovered}`
+                          : styles.menu_item
+                      }`
+                }
+                onClick={() => clickMenu(1)}
+                onMouseEnter={() => mouseEnter(1)}
+                onMouseLeave={mouseLeave}
+              >
+                스토어
+              </li>
+            </Link>
+            <Link to="/interior">
+              <li
+                className={
+                  clickIdx === 2
+                    ? `${
+                        hovIdx === 2 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_clicked} ${styles.menu_item_hovered}`
+                          : `${styles.menu_item} ${styles.menu_item_clicked}`
+                      }`
+                    : `${
+                        hovIdx === 2 && !isUp
+                          ? `${styles.menu_item} ${styles.menu_item_hovered}`
+                          : styles.menu_item
+                      }`
+                }
+                onClick={() => clickMenu(2)}
+                onMouseEnter={() => mouseEnter(2)}
+                onMouseLeave={mouseLeave}
+              >
+                인테리어시공
+              </li>
+            </Link>
           </ul>
         </nav>
         <div className={styles.nav__end}>

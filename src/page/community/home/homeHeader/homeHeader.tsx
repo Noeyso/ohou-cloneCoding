@@ -48,6 +48,7 @@ function HomeHeader() {
     let intervalId = setInterval(() => {
       setCurrentLoopIdx(currentLoopIdx + 1);
     }, slideSpeed);
+    console.log(currentLoopIdx);
 
     return () => clearTimeout(intervalId);
   }, [setCurrentLoopIdx, currentLoopIdx]);
@@ -110,6 +111,8 @@ function HomeHeader() {
               .fill(1)
               .map((_, index) => {
                 const loopIndexToShow = currentLoopIdx + index - size;
+                console.log('render items')
+                console.log(loopIndexToShow)
                 return {
                   staticIndex: getStaticIndex(loopIndexToShow),
                   loopIndexToShow,

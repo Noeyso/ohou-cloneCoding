@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Best from "./best/best";
-import styles from "./home.module.css";
+import styles from "./community.module.css";
 import HomeCategory from "./homeCategory/homeCategory";
 
 import HomeHeader from "./homeHeader/homeHeader";
@@ -12,7 +12,8 @@ import PopularPhotos from "./popularPhotos/popularPhotos";
 import TodayDeal from "./todayDeal/todayDeal";
 import TodayExhibition from "./todayExhibition/todayExhibition";
 
-function Home() {
+
+export default function Community() {
   const [isResize, setIsResize] = useState(false);
   function updateResize() {
     if (window.innerWidth < 768) {
@@ -64,5 +65,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
